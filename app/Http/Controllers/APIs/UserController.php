@@ -14,6 +14,7 @@ use App\Models\Upazila;
 use App\Models\User;
 use QrCode;
 use Carbon\Carbon;
+// saiful
 
 use DB;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -65,8 +66,8 @@ class UserController extends BaseController
         if($validator->fails()){
             return $this->sendError('validation error', $validator->errors());
         }
-   
-      
+
+
         if(Auth::attempt(['phone' => $request->phone, 'password' => $request->password])){
            $user=Auth::user();
             $success['token']=$user->createToken('RestApi')->plainTextToken;
@@ -74,11 +75,11 @@ class UserController extends BaseController
             return $this->sendResponse($success,'User logged in successfully');
         }else{
             return $this->sendError( $request->all(), ['error'=>'Unauthorized Error']);
-        } 
+        }
 
     }
 
-    public function register(Request $request){        
+    public function register(Request $request){
         $validator=null;
          try {
             $user = Auth::user();
@@ -105,7 +106,7 @@ class UserController extends BaseController
                 return $this->sendError('Email already exist', $validator->errors());
             }
 
-            
+
             // do stuff
             //$user->status = 3;
             $user->position_id = 10;
@@ -118,7 +119,7 @@ class UserController extends BaseController
             ]);
             $memberId=  $user->member_id;
             // 'phone'=>$request->phone,
-           
+
             Profile::updateOrInsert(
                     ['member_id' => $memberId], // The key to search for (usually the primary key)
                     [
@@ -132,20 +133,20 @@ class UserController extends BaseController
                 );
             $success=$request->all();
             return  $this->sendResponse($success,'User registered successfully');
-            
+
         } catch (ModelNotFoundException $e) {
             // Record not found
             return $this->sendError('Record not found', $validator->errors());
         }
     }
-    
-    
-    
+
+
+
 
     public function finishReg(Request $request){
         $user = Auth::user();
         if( $user->status == 3){
-            $data = DB::table('users') 
+            $data = DB::table('users')
             ->leftJoin('profiles', 'users.member_id', '=', 'profiles.member_id')
             ->leftJoin('organizations', 'users.organization_id', '=', 'organizations.id')
             ->leftJoin('positions', 'users.position_id', '=', 'positions.id')
@@ -158,18 +159,18 @@ class UserController extends BaseController
             ->get();
             $da= json_encode($data);
             QrCode::size(300)->format('png')->generate($da,public_path('uploads/qrcode/qr_'.$user->phone.'.png'));
-    
+
             $notify=new \App\Http\Controllers\APIs\NotificationController;
-            
-           
-           $notify->pushNotification($user->recommended_by);   
-            
-            
+
+
+           $notify->pushNotification($user->recommended_by);
+
+
 
             $user->update(['status'=>1,'active'=>0]);
 
-            
-          
+
+
             $data1=[
                 'message'=>'as member, Please Wait for the Approval'
                 ];
@@ -179,7 +180,7 @@ class UserController extends BaseController
             $user->update(['active'=>1,'status'=>2,'approved'=>0]);
             return  $this->sendResponse(['message'=>'as follower'],'User registered successfully');
         }
-         
+
     }
 
 
@@ -211,7 +212,7 @@ class UserController extends BaseController
         // $user->update([
         //     'profile_photo'=>$image_name
         // ]);
-        
+
         if ($profile) {
             $profile->update(
                 [
@@ -224,8 +225,8 @@ class UserController extends BaseController
         }
        return $this->sendResponse($image_name,'Image Uploaded in successfully');
     }
-    
-    
+
+
     public function update_NID_front(Request $request){
         $validator = Validator::make($request->all(),[
             'nid_front'   => 'required|image|mimes:jpg,bmp,png'
@@ -255,7 +256,7 @@ class UserController extends BaseController
         // $user->update([
         //     'nid_front'=>$image_name
         // ]);
-      
+
         if ($profile) {
             $profile->update(
                 [
@@ -295,7 +296,7 @@ class UserController extends BaseController
               $image_name=$profile->nid_back;
         }
 
-       
+
         if ($profile) {
             $profile->update(
                 [
@@ -313,14 +314,14 @@ class UserController extends BaseController
 
 
     public function change_password(Request $request){
-       
+
         try {
             $user=Auth::user();
            // Record found
            $validator = Validator::make($request->all(),[
             'new_password' => 'required|min:5',
             'current_password' => 'required|different:new_password'
-   
+
            ]);
            if($validator->fails()){
                return $this->sendError('validation error', $validator->errors());
@@ -330,16 +331,16 @@ class UserController extends BaseController
                $user->update([
                    'password' => Hash::make($request->new_password),
                ]);
-       
+
                return  $this->sendResponse('successful','User registered successfully');
            }else{
                return  $this->sendError('Current password did not match', $validator->errors());
            }
-           
+
        } catch (ModelNotFoundException $e) {
            // Record not found
            return $this->sendError('Record not found', $validator->errors());
-       } 
+       }
     }
 
     public function user_details(Request $request){
@@ -362,7 +363,7 @@ class UserController extends BaseController
         }else{
             return $this->sendError('Record not found', ['error'=>'Unauthorized Error']);
         }
-   
+
     }
 
     public function divisions(Request $request){
@@ -405,13 +406,13 @@ class UserController extends BaseController
            if($validator->fails()){
                return $this->sendError('validation error', $validator->errors());
            }
-           
+
            // update
            $user->update($request->all());
-           
+
            $success=$request->organization;
            return  $this->sendResponse($success,'Add organization successfully');
-           
+
        } catch (ModelNotFoundException $e) {
            // Record not found
            return $this->sendError('Record not found', $validator->errors());
@@ -426,11 +427,11 @@ class UserController extends BaseController
         return $this->sendResponse([],'user logged out');
     }
 
-  
-    
+
+
    public function qr_code(){
         $user=Auth::user();
-        $data = DB::table('users') 
+        $data = DB::table('users')
         ->leftJoin('organizations', 'users.organization_id', '=', 'organizations.id')
         ->leftJoin('positions', 'users.position_id', '=', 'positions.id')
         ->leftJoin('divisions', 'users.division', '=', 'divisions.id')
@@ -441,7 +442,7 @@ class UserController extends BaseController
         ->get();
          $da= json_encode($data);
          QrCode::size(300)->format('png')->generate($da,public_path('uploads\qrcode\qr_'.$user->phone.'.png'));
-      
+
          return $da;
    }
 
@@ -491,10 +492,10 @@ class UserController extends BaseController
         'upazila'=>$data[0]->upazila,
         'upazila_bn'=>$data[0]->upazila_bn,
         'marquee'=> $marquee[0]->text,
-        'slider_image'=> $image 
+        'slider_image'=> $image
     ];
 
-    
+
     if (!empty($data)) {
         return $this->sendResponse($result,'get User successfully');
     }else{
@@ -527,11 +528,11 @@ class UserController extends BaseController
         }else{
             return $this->sendError('Record not found', ['error'=>'Unauthorized Error']);
         }
-        
+
     }
    public function approval(Request $request){
    // $validator=null;
-        
+
          try {
             $member= DB::table('users')->where('phone',$request->phone)->get()->first();
             $id=$member->id;
@@ -539,16 +540,16 @@ class UserController extends BaseController
             $futureDateTime = $currentTimestamp->addYear();
             $exp_date=$futureDateTime->format('Y-m-d H:i:s');
             // $request->merge(['expired_date'=>$exp_date]);
-              
+
             $data = User::findOrFail($id);
             if ($data) {
                 $data->update(['approved' => 1,'active' => 1,'expired_date'=>$exp_date]);
-        
+
                 return  $this->sendResponse(['message'=>$id],'User approved successfully');
             } else {
                 return $this->sendError('Record not found', ['error'=>'Unauthorized Error']);
             }
-           
+
         } catch (ModelNotFoundException $e) {
             return $this->sendError('Record not found', '');
         }
@@ -556,7 +557,7 @@ class UserController extends BaseController
 
    public function reject(Request $request){
     // $validator=null;
-         
+
     try {
         $member= DB::table('users')->where('phone',$request->phone)->get()->first();
         $id=$member->id;
@@ -564,16 +565,16 @@ class UserController extends BaseController
         $futureDateTime = $currentTimestamp->addYear();
         $exp_date=$futureDateTime->format('Y-m-d H:i:s');
         // $request->merge(['expired_date'=>$exp_date]);
-          
+
         $data = User::findOrFail($id);
         if ($data) {
             $data->update(['approved' => 2,'active' => 0]);
-    
+
             return  $this->sendResponse(['message'=>$id],'User reject successfully');
         } else {
             return $this->sendError('Record not found', ['error'=>'Unauthorized Error']);
         }
-       
+
     } catch (ModelNotFoundException $e) {
         return $this->sendError('Record not found', '');
     }
@@ -601,9 +602,9 @@ class UserController extends BaseController
         }else{
             return $this->sendError('Record not found', ['error'=>'Unauthorized Error']);
         }
-        
+
     }
 
 
-    
+
 }
