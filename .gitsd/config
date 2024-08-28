@@ -1,0 +1,18 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/EnamulHossain/BNM.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+	vscode-merge-base = origin/master
+[branch "BnmTv"]
+	remote = origin
+	merge = refs/heads/BnmTv
+[remote "origin2"]
+	url = git@github.com:coderblower/bnmWeb.git
+	fetch = +refs/heads/*:refs/remotes/origin2/*
