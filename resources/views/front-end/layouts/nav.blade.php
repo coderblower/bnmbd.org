@@ -256,7 +256,7 @@
                 color: rgb(255, 255, 255);
                 font-weight: 700;" href="{{ route('e_showcase') }}">
 
-                <img src="http://localhost:8000/uploads/BNMTV.png" alt="Logo" class="" style="max-width: 40px;">
+                <img src="{{asset('uploads/BNMTV.png')}}" alt="Logo" class="" style="max-width: 40px;">
                 <span>BNM TV </span>
                 </a>
             </div>
