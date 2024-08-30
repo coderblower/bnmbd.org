@@ -250,13 +250,14 @@
 
             <div class="e-showcase">
                 <a class="showcase" style="padding: 14px;
-                background-color: #f50000;
+                background-color: #2a362c;
                 margin-right: 20px;
                 border-radius: 10px;
                 color: rgb(255, 255, 255);
+                transform:scale(1.4) translate(1);
                 font-weight: 700;" href="{{ route('e_showcase') }}">
 
-                <img src="{{asset('uploads/BNMTV.png')}}" alt="Logo" class="" style="max-width: 40px;">
+                <img src="{{asset('uploads/BNMTV.png')}}" alt="Logo" class="" style="max-width: 40px; transform: rotate(-35deg) translate(1px, -13px) scale(1.7);">
                 <span>BNM TV </span>
                 </a>
             </div>
