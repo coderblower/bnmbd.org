@@ -173,13 +173,13 @@
 /*** Carousel Start ***/
 
 .custom-carousel .carousel-item {
-    height: 45rem; /* Default height for large screens */
+    height: 42rem; /* Default height for large screens */
 }
 
 .custom-carousel .carousel-item img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 /* Responsive adjustments */

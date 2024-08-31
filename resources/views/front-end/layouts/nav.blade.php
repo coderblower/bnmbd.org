@@ -1,8 +1,9 @@
 <!-- Navbar Start -->
-<div class="container-fluid fixed-top"
-    style="background-color: #fff; border-bottom: 1px solid rgb(219, 219, 219); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); margin-top: -0.8px; z-index:99">
+<div class="fixed-top" style="background-color: #fff;
+ /* border-bottom: 1px solid rgb(219, 219, 219); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  */
+ margin-top: -0.8px; z-index:99">
 
-  <div class="top-nav" style="background-color: black; color:#fff">
+  <div class="top-nav" style="background-color: #ff8a8a; color:#fff">
     <div class="container">
         <div class="row">
 
@@ -10,9 +11,9 @@
                     <div class="d-none d-xl-flex flex-shrink-0" style="padding:11px 0px 2px 0">
                         <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
                             <a href="" class="position-relative animated tada infinite" style="font-size: 13px">
-                                <i class="fa fa-phone-alt fa-2x" style="color: #e82629"></i>
+                                <i class="fa fa-phone-alt fa-2x" style="color: #2a362c"></i>
                                 <div class="position-absolute" style="top: -7px; left: 20px">
-                                    <span><i class="fa fa-comment-dots" style="color: #39b44b"></i></span>
+                                    <span><i class="fa fa-comment-dots" style="color: #39b44b;transform: scale(1.5);"></i></span>
                                 </div>
                             </a>
                         </div>
@@ -76,10 +77,10 @@
   </div>
 
     <div class="container">
-        <nav class="navbar navbar-light navbar-expand-lg py-0">
+        <nav class="navbar navbar-light navbar-expand-lg" style="padding: 10px 0; ">
             <a href="{{ route('frontend.index') }}" class="navbar-brand">
                 <img src="{{ asset('frontend/img/BNMLogo.png') }}" class="img-fluid" alt="First slide"
-                    style="height: auto; width: 105px" />
+                    style="height: auto; width: 49px; transform:scale(2.5, 2.5) translate(10px, 10px)" />
             </a>
             <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">

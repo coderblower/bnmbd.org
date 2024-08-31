@@ -1,11 +1,12 @@
-<div class="container-fluid px-0 custom-carousel" style="">
 
-    <div class="bg-primary text-center" style="
-        top: 158px;
-        position: relative;
+<div class="container-fluid" style="padding:0; margin-bottom:115px;">
+    <div class="">
+        <div class="bg-primary text-center" style="
+        top: 119px;
+        position: fixed;
         z-index: 9;
-        padding: 0 17px;
-    ">
+        width:100%;
+        box-shadow:0 2px 4px rgb(91 94 91 / 70%)">
             <div class="ticker">
                 <!--<div class="news-title">-->
                 <!--    <h5>ব্রেকিং নিউজ</h5>-->
@@ -19,6 +20,12 @@
                 </div>
             </div>
     </div>
+    </div>
+</div>
+
+<div class="container-fluid px-0 custom-carousel" style="">
+
+   
 
     <div id="carouselId" class="carousel slide" style="" data-bs-ride="carousel">
         <ol class="carousel-indicators">

@@ -63,7 +63,7 @@
             display: flex;
             flex-wrap: wrap;
             width: 100%;
-            height: 57px;
+            height: 50px;
             margin: 0 auto;
             /* position: fixed;
             bottom: 0px; */
@@ -74,7 +74,7 @@
         .news {
             width: 100%;
             background: #fff;
-            border: solid 2px #e82629;
+            border-bottom: solid 2px #e82629;
         }
 
         .news-title {
@@ -100,7 +100,9 @@
 
         .news marquee {
             font-size: 20px;
-            margin-top: 15px;
+            margin-top: 10px;
+            width: 90%;
+            float: right;
         }
 
         .news-content p {

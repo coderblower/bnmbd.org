@@ -69,7 +69,7 @@
     font-size: 2.5rem;
     position: absolute;
     inset: 0;
-    z-index: 20;
+    z-index: 8;
     padding: 1.5rem;
     border: none;
 }
