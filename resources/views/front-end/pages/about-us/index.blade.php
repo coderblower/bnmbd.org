@@ -26,7 +26,7 @@
         <div id="" class="" data-bs-ride="">
             <div class="carousel-inner">
               <div class="">
-                <img src="http://127.0.0.1:8000/uploads-image/about-items/1718012300.png" class="d-block w-100" style="height: 800px; alt="...">
+                <img src="//bnmbd.org/uploads-image/sliders/1723464041.png" class="d-block w-100"   alt="...">
               </div>
               <div class="carousel-item">
                 <img src="..." class="d-block w-100" alt="...">
@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="container">
-            
+
             <div class="row g-5 mt-3">
                 <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
                     <div class="h-100 position-relative">
@@ -62,7 +62,7 @@
             </div>
         </div>
         <br>
-        
+
         <div class="container">
             <div class="row g-5 mt-3">
                 @foreach ($about_items as $key => $item)
@@ -70,21 +70,21 @@
                         <div class="card">
                             <img src="{{ asset($item->image) }}" class="card-img-top" alt="image">
                             <div class="card-body">
-                                <h2 class="card-title">{{ $key + 1 }}. 
+                                <h2 class="card-title">{{ $key + 1 }}.
                                     {{ app()->getLocale() == 'bn' ? $item->name_bn : $item->name_en }}
                                 </h2>
-                                <p class="card-text">{{ app()->getLocale() == 'bn' ? $item->description_bn : $item->description_en }}</p>
+                                <p class="card-text">{!! app()->getLocale() == 'bn' ? $item->description_bn : $item->description_en !!}</p>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
         </div>
-    
+
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+
 
         <style>
             .card {
