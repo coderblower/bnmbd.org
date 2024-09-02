@@ -4,7 +4,7 @@
 
             @if ($siteSetting)
                 <h5 class="text-primary">
-                    {{ app()->getLocale() == 'bn' ? $siteSetting->program_subtitle_en : $siteSetting->program_subtitle_en }}
+                    {{ app()->getLocale() == 'bn' ? $siteSetting->program_subtitle_bn : $siteSetting->program_subtitle_en }}
                 </h5>
             @else
                 <p>No subTitle available.</p>
@@ -20,27 +20,24 @@
 
         </div>
         <div class="row">
-
             @foreach ($program as $key => $item)
-                <div class="col-md-6">
+                <div class="col-md-4 mb-4">
                     <div class="blog-card">
                         <div class="meta">
                             <div class="photo"
                                 style="
-              background-image: url({{ asset($item->image) }});
-            ">
+                                    background-image: url({{ asset($item->image) }});
+                                    background-size: cover;
+                                    background-position: center;
+                                ">
                             </div>
-                            <ul class="details">
-                                <li class="date">
-                                    {{ app()->getLocale() == 'bn' ? $item->date : $item->date }}
-                                </li>
-                            </ul>
                         </div>
                         <div class="description">
-                            <h5><a href="{{ route('program.details', $item->id) }}">
+                            <h5>
+                                <a href="{{ route('program.details', $item->id) }}">
                                     {{ app()->getLocale() == 'bn' ? $item->title_bn : $item->title_en }}
-                                </a></h5>
-
+                                </a>
+                            </h5>
                             <h2 class="date" style="color: black">
                                 {{ app()->getLocale() == 'bn' ? $item->date : $item->date }}
                             </h2>
@@ -65,3 +62,55 @@
         </div>
     </div>
 </div>
+
+
+
+<style>
+    .blog-card {
+        display: flex;
+        flex-direction: column;
+        height: 350px;
+        /* Adjust the height as needed */
+        overflow: hidden;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .blog-card .meta {
+        height: 150px;
+        /* Adjust the height as needed */
+        overflow: hidden;
+    }
+
+    .blog-card .photo {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .blog-card .description {
+        flex: 1;
+        padding: 15px;
+        overflow: hidden;
+    }
+
+    .blog-card h5,
+    .blog-card .date,
+    .blog-card p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .blog-card h5 a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+    }
+
+    .blog-card .read-more a {
+        color: #e82629;
+        text-decoration: none;
+    }
+</style>

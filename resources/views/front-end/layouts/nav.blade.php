@@ -1,11 +1,12 @@
 <!-- Navbar Start -->
-<div class="fixed-top" style="background-color: #fff;
+<div class="fixed-top"
+    style="background-color: #fff;
  /* border-bottom: 1px solid rgb(219, 219, 219); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  */
  margin-top: -0.8px; z-index:99">
 
-  <div class="top-nav" style="background-color: #ff8a8a; color:#fff">
-    <div class="container">
-        <div class="row">
+    <div class="top-nav" style="background-color: #39B44B; color:#fff">
+        <div class="container">
+            <div class="row">
 
                 <div class="offset-md-2 col-md-6">
                     <div class="d-none d-xl-flex flex-shrink-0" style="padding:11px 0px 2px 0">
@@ -13,7 +14,8 @@
                             <a href="" class="position-relative animated tada infinite" style="font-size: 13px">
                                 <i class="fa fa-phone-alt fa-2x" style="color: #2a362c"></i>
                                 <div class="position-absolute" style="top: -7px; left: 20px">
-                                    <span><i class="fa fa-comment-dots" style="color: #39b44b;transform: scale(1.5);"></i></span>
+                                    <span><i class="fa fa-comment-dots"
+                                            style="color: #39B44B;transform: scale(1.5);"></i></span>
                                 </div>
                             </a>
                         </div>
@@ -40,47 +42,47 @@
                         </div> --}}
 
                     </div>
-            </div>
-            <div class="col-md-2">
-                <div class="d-flex hightech-link">
-                    @if ($siteSetting)
-                        <a href="{{ $siteSetting->facebook_url }}" target="blank"
-                            class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
-                                class="fab fa-facebook-f text-primary"></i></a>
-                        <a href="{{ $siteSetting->twitter_url }}" target="blank"
-                            class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
-                                class="fab fa-twitter text-primary"></i></a>
-                        <a href="{{ $siteSetting->instagram_url }}" target="blank"
-                            class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
-                                class="fab fa-instagram text-primary"></i></a>
-                        <a href="{{ $siteSetting->linkedin_url }}" target="blank"
-                            class="btn-light nav-fill btn btn-square rounded-circle me-0"><i
-                                class="fab fa-linkedin-in text-primary"></i></a>
-                    @else
-                        <p>No data available.</p>
-                    @endif
-
                 </div>
-            </div>
-            <div class="col-md-2">
-                <div class="switch">
-                    <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox"
-                        {{ session()->get('locale') == 'en' ? 'checked' : '' }}>
-                    <label for="language-toggle"></label>
-                    <span class="off">EN</span>
-                    <span class="on">{{ app()->getLocale() == 'bn' ? 'বাং' : 'BN' }}</span>
-                </div>
-            </div>
+                <div class="col-md-2 mt-1">
+                    <div class="d-flex hightech-link">
+                        @if ($siteSetting)
+                            <a href="{{ $siteSetting->facebook_url }}" target="blank"
+                                class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
+                                    class="fab fa-facebook-f text-primary"></i></a>
+                            <a href="{{ $siteSetting->twitter_url }}" target="blank"
+                                class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
+                                    class="fab fa-twitter text-primary"></i></a>
+                            <a href="{{ $siteSetting->instagram_url }}" target="blank"
+                                class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
+                                    class="fab fa-instagram text-primary"></i></a>
+                            <a href="{{ $siteSetting->linkedin_url }}" target="blank"
+                                class="btn-light nav-fill btn btn-square rounded-circle me-0"><i
+                                    class="fab fa-linkedin-in text-primary"></i></a>
+                        @else
+                            <p>No data available.</p>
+                        @endif
 
+                    </div>
+                </div>
+                <div class="col-md-2 mt-2">
+                    <div class="switch">
+                        <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox"
+                            {{ session()->get('locale') == 'en' ? 'checked' : '' }}>
+                        <label for="language-toggle"></label>
+                        <span class="off">EN</span>
+                        <span class="on">{{ app()->getLocale() == 'bn' ? 'বাং' : 'BN' }}</span>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-  </div>
 
     <div class="container">
         <nav class="navbar navbar-light navbar-expand-lg" style="padding: 10px 0; ">
             <a href="{{ route('frontend.index') }}" class="navbar-brand">
                 <img src="{{ asset('frontend/img/BNMLogo.png') }}" class="img-fluid" alt="First slide"
-                    style="height: auto; width: 49px; transform:scale(2.5, 2.5) translate(10px, 10px)" />
+                    style="height: auto; width: 40px; transform:scale(2.5, 2.5) translate(10px, 10px)" />
             </a>
             <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
@@ -88,71 +90,73 @@
             </button>
             <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
                 <div class="navbar-nav ms-auto mx-xl-auto p-0">
-
-                    {{-- <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="party"
-                            data-bs-toggle="dropdown">{{ app()->getLocale() == 'bn' ? __('দল') : __('Party') }}</a>
-                        <div class="dropdown-menu rounded">
-                            <a href="{{ route('party') }}"
-                                class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('দল') : __('Party') }}</a>
-                        </div>
-                    </div> --}}
-
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ app()->getLocale() == 'bn' ? __('পার্টি') : __('Party') }}</a>
+                        <a href="#" class="nav-link dropdown-toggle"
+                            data-toggle="dropdown">{{ app()->getLocale() == 'bn' ? __('পার্টি') : __('Party') }}</a>
                         <div class="dropdown-menu">
-                            <a href="{{ route('abouts')}}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('পরিচিতি') : __('About-Us') }}</a>
+                            <a href="{{ route('abouts') }}"
+                                class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('পরিচিতি') : __('About-Us') }}</a>
                             {{-- <a href="{{ route('partyMembers') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('দলীয় সদস্য') : __('Party Members') }}</a> --}}
-                            <a href="#" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('নেতৃবৃন্দ') : __('Our Leaders') }}</a>
-                            <a href="#" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('সহযোগী সংগঠন') : __('সহযোগী সংগঠন') }}</a>
-                            <a href="#" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('অংগ সংগঠন') : __('অংগ সংগঠন') }}</a>
+                            <a href="#"
+                                class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('নেতৃবৃন্দ') : __('Our Leaders') }}</a>
+                            <a href="#"
+                                class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('সহযোগী সংগঠন') : __('Affiliate organization') }}</a>
+                            <a href="#"
+                                class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('অংগ সংগঠন') : __('Associated Organization') }}</a>
                         </div>
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ app()->getLocale() == 'bn' ? __('মতাদর্শ') : __('Ideology') }}</a>
+                        <a href="#" class="nav-link dropdown-toggle"
+                            data-toggle="dropdown">{{ app()->getLocale() == 'bn' ? __('মতাদর্শ') : __('Ideology') }}</a>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('গঠনতন্ত্র') : __('Person & Family') }}</a>
+                            <a href="#"
+                                class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('গঠনতন্ত্র') : __('Constitution') }}</a>
                             {{-- <a href="{{ route('partyMembers') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('দলীয় সদস্য') : __('Party Members') }}</a> --}}
-                            <a href="#" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('নীতিআদর্শ') : __('Disaster') }}</a>
-                            <a href="#" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('অঙ্গীকার') : __('Charity Dinner') }}</a>
+                            <a href="#"
+                                class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('নীতিআদর্শ') : __('Ethics') }}</a>
+                            <a href="#"
+                                class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('অঙ্গীকার') : __('Commitment') }}</a>
                         </div>
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ app()->getLocale() == 'bn' ? __('আর্কাইভ') : __('archive') }}</a>
+                        <a href="#" class="nav-link dropdown-toggle"
+                            data-toggle="dropdown">{{ app()->getLocale() == 'bn' ? __('আর্কাইভ') : __('Archive') }}</a>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('প্রতিবেদন') : __('Person & Family') }}</a>
+                            <a href="#"
+                                class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('প্রতিবেদন') : __('Report') }}</a>
                             {{-- <a href="{{ route('partyMembers') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('দলীয় সদস্য') : __('Party Members') }}</a> --}}
-                            <a href="#" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('নোটিশ') : __('Disaster') }}</a>
-                            <a href="#" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('প্রকাশনা') : __('Charity Dinner') }}</a>
+                            <a href="#"
+                                class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('নোটিশ') : __('Notice') }}</a>
+                            <a href="#"
+                                class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('প্রকাশনা') : __('Publication') }}</a>
                         </div>
                     </li>
 
 
                     <style>
                         /* Dropdown submenu */
-                    .dropdown-submenu {
-                        position: relative;
-                    }
+                        .dropdown-submenu {
+                            position: relative;
+                        }
 
-                    .dropdown-sub-menu{
-                        display: none;
-                    }
+                        .dropdown-sub-menu {
+                            display: none;
+                        }
 
-                    /* Ensure proper display of the dropdown menu on hover */
-                    .dropdown-submenu:hover .dropdown-sub-menu {
-                        display: block;
-                        top: 0;
-                        left: 100%;
-                        margin-top: -1px;
-                        position: absolute;
-                        background: #ffffff;
-                        border-color: #e82629;
-                        border-radius: 5px;
+                        /* Ensure proper display of the dropdown menu on hover */
+                        .dropdown-submenu:hover .dropdown-sub-menu {
+                            display: block;
+                            top: 0;
+                            left: 100%;
+                            margin-top: -1px;
+                            position: absolute;
+                            background: #ffffff;
+                            border-color: #e82629;
+                            border-radius: 5px;
 
-                    }
-
+                        }
                     </style>
 
 
@@ -161,7 +165,8 @@
                         <div class="navbar-nav ms-auto mx-xl-auto p-0">
                             <!-- Media Dropdown -->
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="mediaDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="mediaDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ app()->getLocale() == 'bn' ? __('মিডিয়া') : __('Media') }}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="mediaDropdown">
@@ -175,103 +180,124 @@
                                         class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('টিভি') : __('BNM TV') }}</a>
                                 </div>
                             </li>
-                        </ul>
-                    </div>
-                    <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
-                        <div class="navbar-nav ms-auto mx-xl-auto p-0">
-                            <!-- Media Dropdown -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="mediaDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ app()->getLocale() == 'bn' ? __('একাডেমি') : __('Academy') }}
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="mediaDropdown">
-                                    <a href="{{ route('institute-for-future-leaders') }}" class="dropdown-item">
-                                        {{ app()->getLocale() == 'bn' ? __('ইনস্টিটিউট অফ ফিউচার লিডার্স ') : __('Institute of Future Leaders') }}
-                                    </a>
-                                    <a href="{{ route('center-for-national-happiness') }}" class="dropdown-item">
-                                        {{ app()->getLocale() == 'bn' ? __('সেন্টার ফর ন্যাশনাল হ্যাপিনেস') : __('Center for National Happiness') }}
-                                    </a>
-                                    <a href="{{ route('center-for-artificial-intelligence') }}" class="dropdown-item">
-                                        {{ app()->getLocale() == 'bn' ? __('সেন্টার ফর আর্টিফিশিয়াল ইন্টেলিজেন্স ') : __('Center for Artificial Intelligence') }}
-                                    </a>
-                                    <a href="{{ route('center-for-shadow-governance') }}" class="dropdown-item">
-                                        {{ app()->getLocale() == 'bn' ? __('সেন্টার ফর শ্যাডো গভর্নেস') : __('Center for Shadow Governance') }}
-                                    </a>
-                                    <a href="{{ route('center-for-political-research-and-strategy') }}" class="dropdown-item">
-                                        {{ app()->getLocale() == 'bn' ? __('সেন্টার ফর পলিটিক্যাল রিসার্চ এন্ড স্ট্রেটেজি') : __('Center for Political Research and Strategy') }}
-                                    </a>
-                                    <a href="{{ route('youth-parliament') }}" class="dropdown-item">
-                                        {{ app()->getLocale() == 'bn' ? __('সেন্টার ফর ইয়ুথ পার্লামেন্ট') : __('Center for Youth Parliament') }}
-                                    </a>
-                                </div>
-                            </li>
+                            </ul>
                         </div>
-                    </div>
-
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ app()->getLocale() == 'bn' ? __('কল্যাণ') : __('Charity') }}</a>
-                        <div class="dropdown-menu">
-                            <a href="{{ route('person') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('ব্যক্তি ও পরিবার') : __('Person & Family') }}</a>
-                            {{-- <a href="{{ route('partyMembers') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('দলীয় সদস্য') : __('Party Members') }}</a> --}}
-                            <a href="{{ route('disaster') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('দুর্যোগ') : __('Disaster') }}</a>
-                            <a href="{{ route('charityDinner') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('চ্যারিটি ডিনার') : __('Charity Dinner') }}</a>
-                            <!--<a href="{{ route('exampleEasyCheckout') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('দান করুন') : __('Donate') }}</a>-->
-                            <a href="{{ route('donate') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('দান করুন') : __('Donate') }}</a>
-                            <div class="dropdown-submenu">
-                                <a href="#" class="dropdown-item dropdown-toggle">{{ app()->getLocale() == 'bn' ? __('প্রতিষ্ঠান গঠন') : __('Institute Build Up') }}</a>
-                                <div class="dropdown-sub-menu">
-                                    <a href="{{ route('religionContext') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('ধর্মীয় প্রতিষ্ঠানে সহযোগিতা') : __('Cooperation in religious institutions') }}</a>
-                                    <a href="{{ route('entertainment') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('চিত্ত বিনোদন সহযোগিতা') : __('Entertainment Collaboration') }}</a>
-                                    <a href="{{ route('education') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('শিক্ষাবৃত্তি ও সহযোগিতা') : __('Scholarship and Cooperation') }}</a>
-                                    <a href="{{ route('culturalActivity') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('চিকিৎসা ও বাসস্থান সহযোগিতা') : __('Medical and Accommodation Assistance') }}</a>
-                                </div>
+                        <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
+                            <div class="navbar-nav ms-auto mx-xl-auto p-0">
+                                <!-- Media Dropdown -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="mediaDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        {{ app()->getLocale() == 'bn' ? __('একাডেমি') : __('Academy') }}
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="mediaDropdown">
+                                        <a href="{{ route('institute-for-future-leaders') }}" class="dropdown-item">
+                                            {{ app()->getLocale() == 'bn' ? __('ইনস্টিটিউট অফ ফিউচার লিডার্স ') : __('Institute of Future Leaders') }}
+                                        </a>
+                                        <a href="{{ route('center-for-artificial-intelligence') }}"
+                                            class="dropdown-item">
+                                            {{ app()->getLocale() == 'bn' ? __('সেন্টার ফর আর্টিফিশিয়াল ইন্টেলিজেন্স ') : __('Center for Artificial Intelligence') }}
+                                        </a>
+                                        <a href="{{ route('center-for-shadow-governance') }}" class="dropdown-item">
+                                            {{ app()->getLocale() == 'bn' ? __('সেন্টার ফর শ্যাডো গভর্নেস') : __('Center for Shadow Governance') }}
+                                        </a>
+                                        <a href="{{ route('center-for-political-research-and-strategy') }}"
+                                            class="dropdown-item">
+                                            {{ app()->getLocale() == 'bn' ? __('সেন্টার ফর পলিটিক্যাল রিসার্চ এন্ড স্ট্রেটেজি') : __('Center for Political Research and Strategy') }}
+                                        </a>
+                                        <a href="{{ route('youth-parliament') }}" class="dropdown-item">
+                                            {{ app()->getLocale() == 'bn' ? __('সেন্টার ফর ইয়ুথ পার্লামেন্ট') : __('Center for Youth Parliament') }}
+                                        </a>
+                                        {{-- <a href="{{ route('center-for-national-happiness') }}" class="dropdown-item">
+                                            {{ app()->getLocale() == 'bn' ? __('সেন্টার ফর ন্যাশনাল হ্যাপিনেস') : __('Center for National Happiness') }}
+                                        </a> --}}
+                                    </div>
+                                </li>
                             </div>
                         </div>
-                    </li>
 
-                    <a href="{{ route('contact') }}" id="contact"
-                        class="nav-item nav-link">{{ app()->getLocale() == 'bn' ? __('যোগাযোগ') : __('Contact') }}</a>
-                    {{-- @if (Route::has('login'))
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle"
+                                data-toggle="dropdown">{{ app()->getLocale() == 'bn' ? __('কল্যাণ') : __('Charity') }}</a>
+                            <div class="dropdown-menu">
+                                <a href="{{ route('person') }}"
+                                    class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('ব্যক্তি ও পরিবার') : __('Person & Family') }}</a>
+                                {{-- <a href="{{ route('partyMembers') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('দলীয় সদস্য') : __('Party Members') }}</a> --}}
+                                <a href="{{ route('disaster') }}"
+                                    class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('দুর্যোগ') : __('Disaster') }}</a>
+                                <a href="{{ route('charityDinner') }}"
+                                    class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('চ্যারিটি ডিনার') : __('Charity Dinner') }}</a>
+                                <!--<a href="{{ route('exampleEasyCheckout') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('দান করুন') : __('Donate') }}</a>-->
+                                <a href="{{ route('donate') }}"
+                                    class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('দান করুন') : __('Donate') }}</a>
+                                <div class="dropdown-submenu">
+                                    <a href="#"
+                                        class="dropdown-item dropdown-toggle">{{ app()->getLocale() == 'bn' ? __('প্রতিষ্ঠান গঠন') : __('Institute Build Up') }}</a>
+                                    <div class="dropdown-sub-menu">
+                                        <a href="{{ route('religionContext') }}"
+                                            class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('ধর্মীয় প্রতিষ্ঠানে সহযোগিতা') : __('Cooperation in religious institutions') }}</a>
+                                        <a href="{{ route('entertainment') }}"
+                                            class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('চিত্ত বিনোদন সহযোগিতা') : __('Entertainment Collaboration') }}</a>
+                                        <a href="{{ route('education') }}"
+                                            class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('শিক্ষাবৃত্তি ও সহযোগিতা') : __('Scholarship and Cooperation') }}</a>
+                                        <a href="{{ route('culturalActivity') }}"
+                                            class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('চিকিৎসা ও বাসস্থান সহযোগিতা') : __('Medical and Accommodation Assistance') }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <a href="{{ route('contact') }}" id="contact"
+                            class="nav-item nav-link">{{ app()->getLocale() == 'bn' ? __('যোগাযোগ') : __('Contact') }}</a>
+                        {{-- @if (Route::has('login'))
                         @auth
                             <a href="contact.html" class="nav-item nav-link d-block d-lg-none">{{ app()->getLocale() == 'bn' ? __('ড্যাশবোর্ড') : __('Dashboard') }}</a>
                         @else
                             <a href="contact.html" class="nav-item nav-link d-block d-lg-none">{{ app()->getLocale() == 'bn' ? __('লগইন') : __('Login') }}</a>
                         @endauth
                     @endif --}}
+                    </div>
                 </div>
-            </div>
-            <div class="e-showcase">
-                <a class="showcase" style="padding: 14px;
+                <div class="e-showcase">
+                    <a class="showcase"
+                        style="padding: 14px;
                 background-color: #ffdb59;
                 margin-right: 20px;
                 border-radius: 10px;
                 color: black;
-                font-weight: 700;" href="{{ route('e_showcase') }}"> {{ app()->getLocale() == 'bn' ? __('ই-শোকেস') : __('E-Showcase') }} </a>
-            </div>
+                font-weight: 700;"
+                        href="{{ route('e_showcase') }}">
+                        {{ app()->getLocale() == 'bn' ? __('ই-শোকেস') : __('E-Showcase') }} </a>
+                </div>
 
-            <div class="e-showcase">
-                <a class="showcase" style="padding: 14px;
-                background-color: #2a362c;
+                <div class="e-showcase">
+                    <a class="showcase"
+                        style="padding: 14px;
+                background-color: #ffffff;
                 margin-right: 20px;
                 border-radius: 10px;
-                color: rgb(255, 255, 255);
+                color: rgb(0, 0, 0);
                 transform:scale(1.4) translate(1);
-                font-weight: 700;" href="{{ route('e_showcase') }}">
+                font-weight: 700;"
+                        href="{{ route('e_showcase') }}">
 
-                <img src="{{asset('uploads/BNMTV.png')}}" alt="Logo" class="" style="max-width: 40px; transform: rotate(-35deg) translate(1px, -13px) scale(1.7);">
-                <span>BNM TV </span>
-                </a>
-            </div>
+                        <img src="{{ asset('uploads/BNMTV.png') }}" alt="Logo" class=""
+                            style="max-width: 38px; transform: rotate(-35deg) translate(1px, -13px) scale(1.7);">
+                        <span>BNM TV </span>
+                    </a>
+                </div>
 
-            <style>
-                .e-showcase{
-                    transition: all .2s ease;
-                }
-                .e-showcase:hover{
-                    transform: scale(1.1);
-                    /* background-color: #fdcd20; */
-                }
-            </style>
+                <style>
+                    .e-showcase {
+                        transition: all .2s ease;
+                    }
+
+                    .e-showcase:hover {
+                        transform: scale(1.1);
+                        /* background-color: #fdcd20; */
+                    }
+                </style>
 
 
 

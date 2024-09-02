@@ -111,7 +111,7 @@
                             <div class="col-lg-12">
                                 @if ($siteSetting)
                                     <iframe class="w-100"
-                                        style="height: 436px; margin-bottom: -6px; border-radius: 5px;"
+                                        style="height: 320px; margin-bottom: -6px; border-radius: 5px;"
                                         src="{{ $siteSetting->map_url }}" loading="lazy"
                                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 @else
