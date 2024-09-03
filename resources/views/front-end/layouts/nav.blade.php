@@ -97,12 +97,12 @@
                             <a href="{{ route('abouts') }}"
                                 class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('পরিচিতি') : __('About-Us') }}</a>
                             {{-- <a href="{{ route('partyMembers') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('দলীয় সদস্য') : __('Party Members') }}</a> --}}
-                            <a href="#"
+                            <a href="{{route('party')}}"
                                 class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('নেতৃবৃন্দ') : __('Our Leaders') }}</a>
-                            <a href="#"
-                                class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('সহযোগী সংগঠন') : __('Affiliate organization') }}</a>
-                            <a href="#"
-                                class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('অংগ সংগঠন') : __('Associated Organization') }}</a>
+                            <a href="{{route('associate')}}"
+                                class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('সহযোগী সংগঠন') : __('Associated organization') }}</a>
+                            <a href="{{route('affiliate')}}"
+                                class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('অংগ সংগঠন') : __('Affiliate Organization') }}</a>
                         </div>
                     </li>
 
@@ -110,12 +110,12 @@
                         <a href="#" class="nav-link dropdown-toggle"
                             data-toggle="dropdown">{{ app()->getLocale() == 'bn' ? __('মতাদর্শ') : __('Ideology') }}</a>
                         <div class="dropdown-menu">
-                            <a href="#"
+                            <a href="{{route('constitution')}}"
                                 class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('গঠনতন্ত্র') : __('Constitution') }}</a>
                             {{-- <a href="{{ route('partyMembers') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('দলীয় সদস্য') : __('Party Members') }}</a> --}}
-                            <a href="#"
+                            <a href="{{route('ethics')}}"
                                 class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('নীতিআদর্শ') : __('Ethics') }}</a>
-                            <a href="#"
+                            <a href="{{route('commitment')}}"
                                 class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('অঙ্গীকার') : __('Commitment') }}</a>
                         </div>
                     </li>
@@ -280,10 +280,10 @@
                 color: rgb(0, 0, 0);
                 transform:scale(1.4) translate(1);
                 font-weight: 700;"
-                        href="{{ route('e_showcase') }}">
+                        href="{{ route('bnmtvs.index') }}">
 
                         <img src="{{ asset('uploads/BNMTV.png') }}" alt="Logo" class=""
-                            style="max-width: 38px; transform: rotate(-35deg) translate(1px, -13px) scale(1.7);">
+                            style="max-width: 38px; transform: rotate(-35deg) translate(1px, -10px) scale(1.7);">
                         <span>BNM TV </span>
                     </a>
                 </div>

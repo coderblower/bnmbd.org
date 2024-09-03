@@ -516,6 +516,49 @@ class HomeController extends Controller
         return view('front-end.pages.Charity.person', compact('siteSetting'));
     }
 
+    public function associate_organization()
+    {
+        $siteSetting = Cache::remember('siteSetting', 60, function () {
+            return SiteSetting::first();
+        });
+
+        return view('front-end.pages.party.associate_organization', compact('siteSetting'));
+    }
+
+    public function affiliate_organization()
+    {
+        $siteSetting = Cache::remember('siteSetting', 60, function () {
+            return SiteSetting::first();
+        });
+
+        return view('front-end.pages.party.affiliate_organization', compact('siteSetting'));
+    }
+
+    public function Constitution()
+    {
+        $siteSetting = Cache::remember('siteSetting', 60, function () {
+            return SiteSetting::first();
+        });
+
+        return view('front-end.pages.party.constitution', compact('siteSetting'));
+    }
+
+    public function Ethics()
+    {
+        $siteSetting = Cache::remember('siteSetting', 60, function () {
+            return SiteSetting::first();
+        });
+
+        return view('front-end.pages.party.ethics', compact('siteSetting'));
+    }
+    public function Commitment()
+    {
+        $siteSetting = Cache::remember('siteSetting', 60, function () {
+            return SiteSetting::first();
+        });
+
+        return view('front-end.pages.party.commitment', compact('siteSetting'));
+    }
 
     public function personFamily(Request $request)
     {
