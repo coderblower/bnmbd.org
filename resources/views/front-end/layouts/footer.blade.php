@@ -7,28 +7,37 @@
                     <a href="{{ route('frontend.index') }}" class="navbar-brand d-flex align-items-center">
                         <img src="{{ asset('frontend/img/BNMLogo.png') }}" class="img-fluid" alt="Logo"
                             style="width: 73px" />
-                        <span
-                            class="text-white fw-bold ms-2">{{ app()->getLocale() == 'bn' ? $siteSetting->site_name_bn : $siteSetting->site_name_en }}</span>
+                        <span class="text-white fw-bold ms-2">{{ app()->getLocale() == 'bn' ? $siteSetting->site_name_bn : $siteSetting->site_name_en }}</span>
                     </a>
-                    <p class="text-light mt-3">
+                    <p class="text-light mt-3" style="text-align: justify">
                         {{ Illuminate\Support\Str::limit(app()->getLocale() == 'bn' ? $siteSetting->description_bn : $siteSetting->description_en, 200) }}
                     </p>
                 @else
                     <p class="text-light">No data available.</p>
                 @endif
-                <div class="d-flex mt-3">
-                    @if ($siteSetting)
-                        @foreach (['facebook', 'twitter', 'instagram', 'linkedin'] as $social)
-                            <a href="{{ $siteSetting->{$social . '_url'} }}" target="_blank"
-                                class="btn-light btn btn-square rounded-circle me-2"><i
-                                    class="fab fa-{{ $social }} text-primary"></i></a>
-                        @endforeach
-                    @else
-                        <p class="text-light">No data available.</p>
-                    @endif
-                </div>
+
+
+                    <div class="d-flex hightech-link">
+                        @if ($siteSetting)
+                            <a href="{{  "https://www.facebook.com/jagojanataparty" }}" style="background-color: #0688FF" target="blank"
+                                class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
+                                    class="fab fa-facebook-f " style="color:#fff"></i></a>
+                            <a href="{{ $siteSetting->twitter_url }}" target="blank"
+                                class="btn-light nav-fill btn btn-square rounded-circle me-2" style="background-color:#000"><i class="fa-brands fa-x-twitter" style="color:#fff"></i></a>
+                            <a href="{{ $siteSetting->instagram_url }}" target="blank"
+                                class="btn-light nav-fill btn btn-square rounded-circle me-2" style="background-color:#B81078"><i
+                                    class="fab fa-instagram " style="color:#fff"></i></a>
+                            <a href="{{ $siteSetting->linkedin_url }}" target="blank"
+                                class="btn-light nav-fill btn btn-square rounded-circle me-0"><i
+                                    class="fab fa-linkedin-in text-primary"></i></a>
+                        @else
+                            <p>No data available.</p>
+                        @endif
+
+                    </div>
+
             </div>
-            <div class="col-md-4">
+            <div class="offset-md-1 col-md-3">
                 <h5 class="text-primary">{{ app()->getLocale() == 'bn' ? 'সাইট ম্যাপ' : 'Site Map' }}</h5>
                 <nav>
                     <ul class="list-unstyled">
@@ -58,7 +67,7 @@
             </div>
             <div class="col-md-4">
                 <h5 class="text-primary">{{ app()->getLocale() == 'bn' ? 'যোগাযোগ করুন' : 'Contact Us' }}</h5>
-                <p class="text-light"><i class="fas fa-map-marker-alt text-primary"></i>
+                <p class="text-light" style="text-align: justify"><i class="fas fa-map-marker-alt text-primary"></i>
                     @if ($siteSetting)
                         {{ $siteSetting->address }}
                     @else

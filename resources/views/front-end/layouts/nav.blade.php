@@ -15,7 +15,7 @@
                                 <i class="fa fa-phone-alt fa-2x" style="color: #2a362c"></i>
                                 <div class="position-absolute" style="top: -7px; left: 20px">
                                     <span><i class="fa fa-comment-dots"
-                                            style="color: #39B44B;transform: scale(1.5);"></i></span>
+                                            style="    color: #ffffff; transform: scale(-1.2) translate(18px, 1px) rotate(45deg);"></i></span>
                                 </div>
                             </a>
                         </div>
