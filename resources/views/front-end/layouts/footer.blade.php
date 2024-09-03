@@ -1,8 +1,8 @@
 <!-- Footer Start -->
 <div class="container-fluid footer bg-dark">
     <div class="container pt-4 pb-3">
-        <div class="row">
-            <div class="col-md-4">
+        <div class="row py-4" >
+            <div class="col-md-5">
                 @if ($siteSetting)
                     <a href="{{ route('frontend.index') }}" class="navbar-brand d-flex align-items-center">
                         <img src="{{ asset('frontend/img/BNMLogo.png') }}" class="img-fluid" alt="Logo"
@@ -37,7 +37,7 @@
                     </div>
 
             </div>
-            <div class="offset-md-1 col-md-3">
+            <div class=" col-md-2">
                 <h5 class="text-primary">{{ app()->getLocale() == 'bn' ? 'সাইট ম্যাপ' : 'Site Map' }}</h5>
                 <nav>
                     <ul class="list-unstyled">
@@ -65,7 +65,7 @@
                     </ul>
                 </nav>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <h5 class="text-primary">{{ app()->getLocale() == 'bn' ? 'যোগাযোগ করুন' : 'Contact Us' }}</h5>
                 <p class="text-light" style="text-align: justify"><i class="fas fa-map-marker-alt text-primary"></i>
                     @if ($siteSetting)

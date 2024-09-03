@@ -19,8 +19,39 @@
         </div>
 
         <div class="owl-carousel team-carousel wow fadeIn" data-wow-delay=".5s">
+
+
+
+
             @foreach ($partyMember as $item)
-                <div class="team-item">
+
+            <div class="col-md-3">
+                <div class="rounded team-item" style="   ">
+                    <div class="team-content">
+                        <div class="team-img-icon">
+                            <div class="team-img rounded-circle" style="width: 150px; height: 150px; margin: 0 auto;">
+                                <img src="{{ asset($item->image) }}" class="img-fluid w-100 h-100 rounded-circle" alt="" style="object-fit: cover;">
+                            </div>
+                            <div class="team-name text-center pt-3">
+                                <h4 class="" style="font-size: 1.25rem;">
+                                    {{ app()->getLocale() == 'bn' ? $item->name_bn : $item->name_en }}
+                                </h4>
+                                <p class="m-0">
+                                    {{ app()->getLocale() == 'bn' ? $item->position->name_bn : $item->position->name_en }}
+                                </p>
+                                <p>
+                                    বাংলাদেশ জাতীয়তাবাদী আন্দোলন
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-icon d-flex justify-content-center pb-4">
+                        <!-- Add social media icons here if needed -->
+                    </div>
+                </div>
+            </div>
+
+                {{-- <div class="team-item">
                     <div class="team-content">
                         <div class="team-img-icon">
                             <div class="team-img">
@@ -39,7 +70,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             @endforeach
         </div>
 
@@ -58,7 +89,7 @@
         align-items: center;
         height: 400px;
         /* Fixed height for the card */
-        width: 300px;
+        width: 250px;
         /* Fixed width for the card */
         border: 1px solid #ddd;
         border-radius: 8px;
@@ -72,7 +103,7 @@
         display: flex;
         flex-direction: column;
         height: 100%;
-        padding: 20px;
+
         /* Padding for better spacing */
         box-sizing: border-box;
         text-align: center;
