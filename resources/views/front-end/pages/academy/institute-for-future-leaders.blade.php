@@ -13,12 +13,15 @@
 
         <!-- About Us Section -->
         <section id="about" class="mb-5">
-            <div class="d-flex flex-row">
-                <img src="https://placehold.co/600x400" alt="">
-                <div class="align-self-center">
-                    <p class="" style="width:200px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur reprehenderit voluptates sint autem odio itaque dolore odit necessitatibus asperiores ratione. Accusamus eaque doloribus neque perferendis qui impedit porro vel cum.</p>
-                </div>
-            </div>
+
+                    <x-Alert >
+                            <x-slot:title>
+                                Hello anamul vai
+                            </x-slot>
+                        </x-Alert>
+
+
+
 
         </section>
 
