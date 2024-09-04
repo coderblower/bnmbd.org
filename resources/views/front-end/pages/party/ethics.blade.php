@@ -10,6 +10,31 @@
         </div>
     </div>
 
+    <!-- Ethics Section Start -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="ethics-box p-4 bg-light text-center shadow-sm">
+                    <h4>{{ app()->getLocale() == 'bn' ? 'নৈতিকতা' : 'Ethic' }}</h4>
+                    <p>{{ app()->getLocale() == 'bn' ? 'বর্ণনা' : 'Description' }}</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="ethics-box p-4 bg-light text-center shadow-sm">
+                    <h4>{{ app()->getLocale() == 'bn' ? 'নৈতিকতা ' : 'Ethic' }}</h4>
+                    <p>{{ app()->getLocale() == 'bn' ? 'বর্ণনা' : 'Description' }}</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="ethics-box p-4 bg-light text-center shadow-sm">
+                    <h4>{{ app()->getLocale() == 'bn' ? 'নৈতিকতা ' : 'Ethic ' }}</h4>
+                    <p>{{ app()->getLocale() == 'bn' ? 'বর্ণনা ' : 'Description ' }}</p>
+                </div>
+            </div>
+            <!-- Add more ethics boxes as needed -->
+        </div>
+    </div>
+    <!-- Ethics Section End -->
 
 
 
