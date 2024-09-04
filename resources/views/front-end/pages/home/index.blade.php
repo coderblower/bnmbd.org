@@ -98,7 +98,9 @@
     </div>
    </div>
 
+
    @include('front-end/pages.home.components.notice')
+
     <!-- Forms Start -->
     @include('front-end.pages.home.components.pdfForm')
     <!-- Forms End -->

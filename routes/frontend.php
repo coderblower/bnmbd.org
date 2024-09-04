@@ -101,6 +101,14 @@ Route::post('/bnmtvs/{bnmtv}/like', [BnmtvController::class, 'like'])->name('com
 
 // Main Charity Menu Routes
 Route::get('person', [HomeController::class, 'person'])->name('person');
+Route::get('associate_organization', [HomeController::class, 'associate_organization'])->name('associate');
+Route::get('affiliate_organization', [HomeController::class, 'affiliate_organization'])->name('affiliate');
+Route::get('constitution', [HomeController::class, 'Constitution'])->name('constitution');
+Route::get('ethics', [HomeController::class, 'Ethics'])->name('ethics');
+Route::get('commitment', [HomeController::class, 'Commitment'])->name('commitment');
+
+
+
 Route::post('person', [HomeController::class, 'personFamily'])->name('personandfamily');
 Route::get('personlist', [HomeController::class, 'personandfamilybackend'])->name('personandfamilybackend');
 // Route::get('party-members', [HomeController::class, 'partyMembers'])->name('partyMembers');
