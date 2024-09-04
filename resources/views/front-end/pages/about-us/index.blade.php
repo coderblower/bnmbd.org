@@ -14,16 +14,17 @@
     <div class="container-fluid py-5 my-5">
         {{-- <div id="" class="" data-bs-ride="">
             <div class="carousel-inner">
-                <div class="">
-                    <img src="http://bnmbd.org/uploads-image/about-items/1718012300.png" class="d-block w-100"
-                        style="height: 800px; alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
+
+              <div class="">
+                <img src="//bnmbd.org/uploads-image/sliders/1723464041.png" class="d-block w-100"   alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+              </div>
+
             </div>
         </div> --}}
         <div class="container">
@@ -63,8 +64,9 @@
                                 <h2 class="card-title">{{ $key + 1 }}.
                                     {{ app()->getLocale() == 'bn' ? $item->name_bn : $item->name_en }}
                                 </h2>
-                                <p class="card-text">
-                                    {!! app()->getLocale() == 'bn' ? $item->description_bn : $item->description_en !!}</p>
+
+                                <p class="card-text">{!! app()->getLocale() == 'bn' ? $item->description_bn : $item->description_en !!}</p>
+
                             </div>
                         </div>
                     </div>

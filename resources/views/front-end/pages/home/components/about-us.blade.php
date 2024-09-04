@@ -6,12 +6,12 @@
                 <div class="position-relative">
                     @if ($about_us)
                         @if ($about_us->image2)
-                            <img src="{{ asset($about_us->image2) }}" class="img-fluid rounded image-2" alt="" />
+                            {{-- <img src="{{ asset($about_us->image2) }}" class="img-fluid rounded image-2" alt="" /> --}}
                         @endif
 
                         @if ($about_us->image1)
                             <div class="position-absolute image-overlay">
-                                <img src="{{ asset($about_us->image1) }}" class="img-fluid rounded" alt="" />
+                                {{-- <img src="{{ asset($about_us->image1) }}" class="img-fluid rounded" alt="" /> --}}
                             </div>
                         @endif
                     @endif

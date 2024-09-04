@@ -46,15 +46,14 @@
                 <div class="col-md-2 mt-1">
                     <div class="d-flex hightech-link">
                         @if ($siteSetting)
-                            <a href="{{ $siteSetting->facebook_url }}" target="blank"
+                            <a href="{{  "https://www.facebook.com/jagojanataparty" }}" style="background-color: #0688FF" target="blank"
                                 class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
-                                    class="fab fa-facebook-f text-primary"></i></a>
+                                    class="fab fa-facebook-f " style="color:#fff"></i></a>
                             <a href="{{ $siteSetting->twitter_url }}" target="blank"
-                                class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
-                                    class="fab fa-twitter text-primary"></i></a>
+                                class="btn-light nav-fill btn btn-square rounded-circle me-2" style="background-color:#000"><i class="fa-brands fa-x-twitter" style="color:#fff"></i></a>
                             <a href="{{ $siteSetting->instagram_url }}" target="blank"
-                                class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
-                                    class="fab fa-instagram text-primary"></i></a>
+                                class="btn-light nav-fill btn btn-square rounded-circle me-2" style="background-color:#B81078"><i
+                                    class="fab fa-instagram " style="color:#fff"></i></a>
                             <a href="{{ $siteSetting->linkedin_url }}" target="blank"
                                 class="btn-light nav-fill btn btn-square rounded-circle me-0"><i
                                     class="fab fa-linkedin-in text-primary"></i></a>
