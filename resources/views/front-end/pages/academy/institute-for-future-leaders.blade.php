@@ -4,18 +4,25 @@
     <br>
     <br>
     <br>
-    <div class="container my-5">
+    <div class="my-5">
         <!-- Hero Section -->
-        <div class="jumbotron text-center bg-primary text-white p-5 mb-4">
+        <div class="jumbotron text-center  text-white py-5 mb-4" style="background:#35bb96 ">
             <h1 class="display-4">Institute for Future Leaders</h1>
             <p class="lead">Empowering the leaders of tomorrow with world-class education.</p>
         </div>
 
         <!-- About Us Section -->
         <section id="about" class="mb-5">
-            <h2 class="mb-4">About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Mauris
-                lacinia suscipit lorem, at sagittis magna vulputate nec. Phasellus eu magna nec felis aliquet bibendum.</p>
+
+                    <x-Alert >
+                            <x-slot:title>
+                                Hello anamul vai
+                            </x-slot>
+                        </x-Alert>
+
+
+
+
         </section>
 
         <!-- Courses Section -->
@@ -56,7 +63,7 @@
                         @enderror
                     </div>
                     <div>
-                        <input type="hidden" value="1" name="user_id">        
+                        <input type="hidden" value="1" name="user_id">
                         <input type="hidden" value="enrolled" name="status">
 
                     </div>

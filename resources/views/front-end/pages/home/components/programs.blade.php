@@ -41,7 +41,7 @@
                             <h2 class="date" style="color: black">
                                 {{ app()->getLocale() == 'bn' ? $item->date : $item->date }}
                             </h2>
-                            <p style="color: black">
+                            <p style="color: black; min-height:64px">
                                 {{ app()->getLocale() == 'bn' ? Illuminate\Support\Str::limit($item->description_bn, 100) : Illuminate\Support\Str::limit($item->description_en, 100) }}
                             </p>
                             <p class="read-more">
@@ -69,7 +69,7 @@
     .blog-card {
         display: flex;
         flex-direction: column;
-        height: 350px;
+        /* height: 350px; */
         /* Adjust the height as needed */
         overflow: hidden;
         border: 1px solid #ddd;

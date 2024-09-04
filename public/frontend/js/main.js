@@ -10,12 +10,12 @@
         }, 1);
     };
     spinner();
-    
-    
+
+
     // Initiate the wowjs
     new WOW().init();
-    
-    
+
+
    // Back to top button
    $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
@@ -37,7 +37,7 @@
         center: false,
         dots: false,
         loop: true,
-        margin: 50,
+        // margin: 10,
         nav : true,
         navText : [
             '<i class="bi bi-arrow-left"></i>',
@@ -52,7 +52,7 @@
                 items:2
             },
             992:{
-                items:3
+                items:4
             }
         }
     });

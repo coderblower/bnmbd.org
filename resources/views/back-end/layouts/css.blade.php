@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="{{asset('backend/plugins/summernote/summernote-bs4.min.css')}}">
 
 <!-- SweetAlert2 -->
-<link rel="stylesheet" href="{{asset('backend/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
+<link rel="stylesheet" href="{{asset('build\assets\app-041e359a.css')}}">
 <!-- Toastr -->
 <link rel="stylesheet" href="{{asset('backend/plugins/toastr/toastr.min.css')}}">
 
