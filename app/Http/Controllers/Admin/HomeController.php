@@ -683,4 +683,9 @@ class HomeController extends Controller
         dd($request);
     }
 
+
+    public function getConstitution(){
+        return view('front-end.pages.constitution.index');
+    }
+
 }

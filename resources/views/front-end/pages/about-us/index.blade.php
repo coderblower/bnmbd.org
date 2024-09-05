@@ -1,18 +1,18 @@
 @extends('front-end.layouts.master')
 @section('title', 'About Us')
 @section('content')
-    <!-- Page Header Start -->
+    {{-- <!-- Page Header Start -->
     <div class="container-fluid page-header" id="stats-section" style="margin-top:82px; background-image: url('{{ asset('frontend/img/counter-bg.jpg') }}'); background-size: cover; background-attachment: fixed; height: 600px; display: flex; align-items: center; justify-content: center;">
         <div class="container text-center">
             <h1 class="display-2 text-white mb-1 animated slideInDown">{{ app()->getLocale() == 'bn' ? 'পরিচিতি' : 'About Us' }}</h1>
         </div>
     </div>
-    <!-- Page Header End -->
+    <!-- Page Header End --> --}}
 
 
     <!-- About Start -->
     <div class="container-fluid py-5 my-5">
-        {{-- <div id="" class="" data-bs-ride="">
+        <div id="" class="" data-bs-ride="">
             <div class="carousel-inner">
 
               <div class="">
@@ -136,10 +136,11 @@
 
         <br>
 
+
         <div class="container">
             <div class="row g-5 mt-3">
                 @foreach ($about_items as $key => $item)
-                    <div class="col-lg-6 col-xl-6 mb-4 wow fadeIn" data-wow-delay=".3s">
+                    <div class="col-lg-10 col-xl-10 mb-4 wow fadeIn" data-wow-delay=".3s">
                         <div class="card">
                             <img src="{{ asset($item->image) }}" class="card-img-top" alt="image">
                             <div class="card-body">
@@ -157,7 +158,7 @@
         </div>
 
 
-        {{-- <x-Alert/> --}}
+         {{-- <x-Alert/> --}}
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
