@@ -10,7 +10,7 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+
     <!-- Stripe.js -->
     <script src="https://js.stripe.com/v3/"></script>
 
@@ -38,17 +38,22 @@
         <p class="lead"></p>
     </div>
 
+    @php
+        $cartItems = [];
+    @endphp
     <div class="row">
         <div class="col-md-4 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-muted">Your cart</span>
-                <span class="badge badge-secondary badge-pill">{{ count($cartItems) }}</span>
+                <span class="badge badge-secondary badge-pill"></span>
             </h4>
             <ul class="list-group mb-3">
                 @php
                     $total = 0;
                     $deliveryCharge = 50; // Delivery charge in Taka
+                    $cartItems = [];
                 @endphp
+
                 @foreach($cartItems as $item)
                     @php
                         $total += $item['price'];
@@ -74,8 +79,8 @@
                 </li>
             </ul>
         </div>
-        
-        
+
+
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Billing address</h4>
             <form method="POST" class="needs-validation" action="{{route('pay_stripe')}}" novalidate>

@@ -21,8 +21,11 @@ class CheckoutController extends Controller
         return view('exampleEasycheckout', compact('sessionData', 'cartItems'));
     }
 
-    public function getSession()
+    public function getSession(Request $request)
     {
+
+
+
         $total_price = session()->get('total_price');
 
         $stripe = new \Stripe\StripeClient('sk_test_51NfeDnEOWXOhaJD82aK2SkjrpsnSxvr2aXpHEb9l3eY1XFIgt0qlFgPaftWDwFZ0wHrS8GtaDP2k4uyy6KfP9QK500DWLORx6Y');
@@ -34,7 +37,7 @@ class CheckoutController extends Controller
                 [
                     'price_data' => [
                         'currency' => "usd",
-                        'unit_amount' => $total_price,
+                        'unit_amount' => $request->customer_amount,
                         'product_data' => [
                             'name' => 'Hello world product'
                         ]

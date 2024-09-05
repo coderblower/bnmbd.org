@@ -37,14 +37,25 @@
                 @endif
             </p>
             <div class="text-center mt-5">
-                <a href="{{ route('exampleEasyCheckout') }}" class="btn btn-primary btn-lg">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                     @if (app()->getLocale() == 'bn')
                         এখনই দান করুন
                     @else
                         Donate Now
                     @endif
-                </a>
+                </button>
+
+
+                <!-- Button trigger modal -->
+
+
+            <x-PaymentModal targetId="#exampleModalCenter" />
+
+
+
             </div>
+
+
         </div>
     </div>
 </div>

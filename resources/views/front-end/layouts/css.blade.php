@@ -13,8 +13,8 @@
 <link href="{{ asset('frontend/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
 <!-- Customized Bootstrap Stylesheet -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet">
-
 <!-- Template Stylesheet -->
 <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet">
 
