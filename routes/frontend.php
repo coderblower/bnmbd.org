@@ -45,6 +45,9 @@ Route::get('gallery-page', [HomeController::class, 'gallery'])->name('gallery-pa
 Route::get('donate', [HomeController::class, 'donate'])->name('donate');
 
 
+Route::get('constitution', [HomeController::class, 'getConstithution'])->name('constitution');
+
+
 Route::get('/primary-member', [HomeController::class, 'primary_member'])->name('primary_member');
 Route::post('/primary-member', [HomeController::class, 'create_primary_member']);
 
