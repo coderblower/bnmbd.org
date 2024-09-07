@@ -23,7 +23,7 @@ class CartController extends Controller
     public function update($id, $quantity)
     {
         $cart = Session::get('cart', []);
-        
+
         if (isset($cart[$id])) {
             $cart[$id]['quantity'] = $quantity;
             Session::put('cart', $cart);
@@ -39,7 +39,7 @@ class CartController extends Controller
     public function remove($id)
     {
         $cart = Session::get('cart', []);
-        
+
         if (isset($cart[$id])) {
             unset($cart[$id]);
             Session::put('cart', $cart);
@@ -72,9 +72,14 @@ class CartController extends Controller
 
         Session::put('cart', $cart);
 
-        
+        $counts = 0;
+        //
+        foreach($cart as $key => $value){
+            $counts += $value['quantity'];
+        };
 
-        return response()->json(['success' => true]);
+
+        return response()->json(['success' => true, 'cart_added_number'=>$counts]);
     }
 
 
@@ -86,9 +91,9 @@ class CartController extends Controller
         $cart = Session::get('cart', []);
         $cartCount = count($cart);
 
-        return view('front-end.pages.e-showcase.cardview', 
+        return view('front-end.pages.e-showcase.cardview',
         [
-            'cart' => $cart, 
+            'cart' => $cart,
             'cartCount' => $cartCount,
             'siteSetting' => $siteSetting,
         ]);

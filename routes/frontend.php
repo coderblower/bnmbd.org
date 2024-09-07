@@ -4,7 +4,7 @@
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\LangController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\ContactusController;
+use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\BnmtvController;

@@ -14,11 +14,11 @@
         <!-- About Us Section -->
         <section id="about" class="mb-5">
 
-                    <x-Alert >
+                    {{-- <x-Alert >
                             <x-slot:title>
                                 Hello anamul vai
                             </x-slot>
-                        </x-Alert>
+                        </x-Alert> --}}
 
 
 

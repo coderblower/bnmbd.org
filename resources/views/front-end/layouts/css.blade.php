@@ -132,4 +132,8 @@
     input.check-toggle-round-flat:checked+label:after {
         margin-left: 44px;
     }
+
+    #toast-container{
+        top: 100px
+    }
 </style>

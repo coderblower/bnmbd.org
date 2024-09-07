@@ -8,7 +8,7 @@
             <h1 class="display-4">
                 {{ app()->getLocale() == 'bn' ? 'ই-শোকেস' : 'E-Showcase' }}
             </h1>
-        </div>        
+        </div>
     </div>
     <!-- Page Header End -->
 
@@ -170,7 +170,7 @@
                                                 <button class="btn btn-outline-secondary btn-sm" onclick="addToCart({{ $item->id }})">
                                                     {{ __('Add to Cart') }}
                                                 </button>
-                                                                                             
+
                                                 {{-- <a href="{{ route('exampleAddToCart', $item->id) }}" class="btn btn-outline-secondary btn-sm">@lang('Add to Cart')</a> --}}
                                                 <a href="#" class="btn btn-primary btn-sm">@lang('Buy Now')</a>
                                                 {{-- <a href="{{ route('exampleEasyCheckout') }}" class="btn btn-primary btn-sm">@lang('Buy Now')</a> --}}
@@ -181,8 +181,8 @@
                             @endforeach
                         </div>
                     </div>
-                    
-                    
+
+
 
                     <!-- Pagination Links -->
                     @if ($eshowcase->total() > 12)
@@ -313,6 +313,8 @@
 
 @section('js')
     <script>
+
+
         function addToCart(id) {
             fetch(`/cart/add/${id}`, {
                 method: 'POST',
@@ -322,19 +324,20 @@
                 },
             }).then(response => response.json())
             .then(data => {
+                console.log(data);
                 if (data.success) {
-                    alert('Item added to cart.');
+                    toastr.success("product added successfully ");
                 } else {
-                    alert('Error adding item.');
+                    toastr.error('Product could not be send ! please try again');
                 }
+                $('#cart-count').html(data.cart_added_number);
             });
         }
-    </script>
-    <script>
+
         function toggleCustomPriceInput() {
             const priceSelect = document.getElementById('price-range-select').value;
             const customPriceInputs = document.getElementById('custom-price-inputs');
-            
+
             if (priceSelect === 'custom') {
                 customPriceInputs.style.display = 'block';
             } else {
@@ -373,5 +376,29 @@
                 window.location.search = urlParams.toString();
             };
         });
+
+
+        $.ajax({
+                type: "DELETE",
+                url: url.replace(':id', id),
+                success: function (resp) {
+                    console.log(resp);
+                    // Reloade DataTable
+                    $('#table').DataTable().ajax.reload();
+                    if (resp.success === true) {
+                        // show toast message
+                        toastr.success(resp.message);
+                    } else if (resp.errors) {
+                        toastr.error(resp.errors[0]);
+                    } else {
+                        toastr.error(resp.message);
+                    }
+                }, // success end
+                error: function (error) {
+                    location.reload();
+                } // Error
+            })
+
+
     </script>
 @endsection
