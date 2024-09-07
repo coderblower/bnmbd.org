@@ -80,7 +80,7 @@
     <div class="container">
         <nav class="navbar navbar-light navbar-expand-lg" style="padding: 10px 0; ">
             <a href="{{ route('frontend.index') }}" class="navbar-brand">
-                <img src="{{ asset('frontend/img/BNMLogo.png') }}" class="img-fluid" alt="First slide"
+                <img src="https://res.cloudinary.com/saiful/image/upload/e_improve:outdoor:60,w_200,h_200,f_auto,q_50/v1/bnm_project/esbgpolwywmji4wfwel5.png" class="img-fluid" alt="First slide"
                     style="height: auto; width: 40px; transform:scale(2.5, 2.5) translate(10px, 10px)" />
             </a>
             <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
@@ -281,9 +281,9 @@
                                 font-weight: 700;"
                         href="{{ route('bnmtvs.index') }}">
 
-                        <img src="{{ asset('uploads/BNMTV.png') }}" alt="Logo" class=""
-                            style="max-width: 38px; transform: rotate(-35deg) translate(1px, -10px) scale(1.7);">
-                        <span>BNM TV </span>
+                        <img src="https://res.cloudinary.com/saiful/image/upload/w_100,h_80,q_2/v1/bnm_project/vz6gykiapk1reftcx5d1.png" alt="Logo" class=""
+                            style="max-width: 38px; transform: rotate(-35deg) translate(1px, 0px) scale(1.7);">
+                        <span> </span>
                     </a>
                 </div>
 
