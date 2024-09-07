@@ -342,7 +342,15 @@ class HomeController extends Controller
                 ->paginate(20);
 
                 $cart = Session::get('cart', []);
-                $cartCount = count($cart);
+
+                $counts = 0;
+        //
+                foreach($cart as $key => $value){
+                    $counts += $value['quantity'];
+                };
+
+
+                $cartCount = $counts;
 
             return view('front-end.pages.e-showcase.index', compact('siteSetting', 'eshowcase', 'cartCount'));
         } catch (\Exception $exception) {
