@@ -273,12 +273,12 @@
                 <div class="e-showcase">
                     <a class="showcase"
                         style="padding: 14px;
-                background-color: #ffffff;
-                margin-right: 20px;
-                border-radius: 10px;
-                color: rgb(0, 0, 0);
-                transform:scale(1.4) translate(1);
-                font-weight: 700;"
+                                background-color: #ffffff;
+                                margin-right: 20px;
+                                border-radius: 10px;
+                                color: rgb(0, 0, 0);
+                                transform:scale(1.4) translate(1);
+                                font-weight: 700;"
                         href="{{ route('bnmtvs.index') }}">
 
                         <img src="{{ asset('uploads/BNMTV.png') }}" alt="Logo" class=""
@@ -336,11 +336,11 @@
     <div class="">
         <div class="bg-primary text-center"
             style="
-        top: 119px;
-        position: fixed;
-        z-index: 9;
-        width:100%;
-        box-shadow:0 2px 4px rgb(91 94 91 / 70%)">
+                top: 119px;
+                position: fixed;
+                z-index: 9;
+                width:100%;
+                box-shadow:0 2px 4px rgb(91 94 91 / 70%)">
             <div class="ticker">
                 <!--<div class="news-title">-->
                 <!--    <h5>ব্রেকিং নিউজ</h5>-->

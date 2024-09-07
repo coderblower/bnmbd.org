@@ -11,6 +11,14 @@ use DataTables;
 
 class ContactUsController extends Controller
 {
+
+
+    public function __construct()
+        {
+            $this->middleware('auth')->except(['store']);
+
+        }
+
     /**
      * Display a listing of the resource.
      */
@@ -79,7 +87,7 @@ class ContactUsController extends Controller
     {
         try {
             $data = ContactUs::findOrFail($id);
-        
+
         // Delete the record
         $data->delete();
 

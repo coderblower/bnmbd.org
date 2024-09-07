@@ -57,7 +57,7 @@
                 <div class="col-md-2 mx-auto">
                     <div class="row">
                         <a href="javascript:void" class="" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                            <img class="cons-img" src="{{asset('frontend/img/constitution.jpg')}}" height="270" width="200" style="border: 4px solid black" alt="">
+                            <img class="cons-img" src="https://res.cloudinary.com/saiful/image/upload/w_200,h_250,f_auto,q_50/v1/bnm_project/b8xriyhqdguq6zuofy4e" height="270" width="200" style="border: 4px solid black" alt="">
 
                         </a>
                     </div>

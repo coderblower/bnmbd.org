@@ -87,7 +87,7 @@ Route::resource('site-setting',SiteSettingController::class);
 
 
 //ContactUS route started here
-Route::resource('contactus', ContactUsController::class);
+
 
 //Position route started here
 Route::resource('position',PositionController::class);

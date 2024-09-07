@@ -64,7 +64,7 @@
             flex-wrap: wrap;
             width: 100%;
             height: 50px;
-            margin: 0 auto;
+            margin: -7px auto;
             /* position: fixed;
             bottom: 0px; */
             right: 0px;

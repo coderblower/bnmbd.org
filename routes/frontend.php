@@ -1,9 +1,10 @@
 <?php
 
+
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\LangController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\ContactusController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\BnmtvController;
@@ -190,3 +191,5 @@ Course::all();
 
     return view('front-end.pages.academy.coursedetails', compact('siteSetting', 'course'));
 })->name('coursedetails');
+
+Route::resource('contactus', ContactUsController::class);
