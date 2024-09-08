@@ -20,7 +20,7 @@
             @foreach ($news as $key => $item)
                 <div class="col-lg-6 col-xl-4 mb-3 wow fadeIn" data-wow-delay=".3s">
                     <div class="blog-item position-relative bg-light rounded" style="height: 400px; overflow: hidden;">
-                        <img src="{{ asset($item->image) }}" class="img-fluid w-100 rounded-top" alt="" style="height: 200px; object-fit: cover;" />
+                        <img src="{{(str_contains($item->image, 'bnm_project'))? $item->image:asset($item->image) }}" class="img-fluid w-100 rounded-top" alt="" style="height: 200px; object-fit: cover;" />
                         <div class="blog-content position-relative px-3" style="height: 120px; margin-top: 30px; overflow: hidden;">
 
                             <h5 class="text-truncate">

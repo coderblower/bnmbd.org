@@ -15,7 +15,7 @@
             @if ($sliders && $sliders->count() > 0)
                 @foreach ($sliders as $key => $item)
                     <div class="carousel-item{{ $key === 0 ? ' active' : '' }}">
-                        <img src="{{ asset($item->image) }}" class="img-fluid" alt="Slide {{ $key + 1 }}">
+                        <img src="{{(str_contains($item->image, 'bnm_project'))? $item->image:asset($item->image) }}" class="img-fluid" alt="Slide {{ $key + 1 }}">
 
                     </div>
                 @endforeach
