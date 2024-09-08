@@ -147,10 +147,10 @@ Route::get('/initiative', [YouthParliamentController::class, 'show'])->name('ini
 Route::get('/cart', [CartController::class, 'show'])->name('cart.show');
 
 // Update item quantity in cart
-Route::post('/cart/update/{id}/{quantity}', [CartController::class, 'update'])->middleware('auth');
+Route::post('/cart/update/{id}/{quantity}', [CartController::class, 'update']);
 
 // Remove item from cart
-Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->middleware('auth');
+Route::delete('/cart/remove/{id}', [CartController::class, 'remove']);
 
 Route::post('/cart/add/{id}', [CartController::class, 'add']);
 

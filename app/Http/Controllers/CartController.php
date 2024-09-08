@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Eshowcase;
 use App\Models\SiteSetting;
+use Illuminate\Database\Eloquent\Casts\Json;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
@@ -12,6 +13,7 @@ class CartController extends Controller
 {
     public function show()
     {
+
         $cart = Session::get('cart', []);
         $cart_total = array_reduce($cart, function ($carry, $item) {
             return $carry + ($item['price'] * $item['quantity']);
@@ -22,10 +24,15 @@ class CartController extends Controller
 
     public function update($id, $quantity)
     {
+        dd($quantity);
         $cart = Session::get('cart', []);
 
         if (isset($cart[$id])) {
-            $cart[$id]['quantity'] = $quantity;
+            if(str_contains($quantity, 'de')){
+                dd($quantity);
+                $cart[$id]['quantity'] -= 1;
+            } else {   $cart[$id]['quantity'] += 1; dd($quantity);
+            }
             Session::put('cart', $cart);
         }
 
@@ -34,6 +41,7 @@ class CartController extends Controller
         }, 0);
 
         return response()->json(['success' => true, 'cart_total' => $cart_total]);
+
     }
 
     public function remove($id)

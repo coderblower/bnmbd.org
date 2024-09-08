@@ -7,7 +7,7 @@
 <br>
 @section('content')
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Shopping Cart</h2>
+        <h2 class="text-center mb-4">Shopping Carts</h2>
         @if (count($cart) > 0)
             <div class="table-responsive">
                 <table class="table table-bordered">
@@ -53,7 +53,7 @@
                             <td colspan="3" class="text-right"><strong>Total:</strong></td>
                             <td colspan="2"><strong>৳{{ number_format(array_sum(array_map(function($item) {
                                 return (float)$item['price'] * (int)$item['quantity'];
-                            }, $cart)), 2) }}</strong></td>                            
+                            }, $cart)), 2) }}</strong></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -76,6 +76,7 @@
             vertical-align: middle;
         }
 
+
         .table img {
             max-width: 100%;
         }
@@ -85,6 +86,7 @@
 @section('js')
     <script>
         function updateCartItemQuantity(id, action) {
+            console.log(id, action)
             let url = `/cart/update/${id}/${action}`;
             fetch(url, {
                 method: 'POST',
@@ -94,6 +96,8 @@
                 }
             }).then(response => response.json())
               .then(data => {
+
+                    console.log(data)
                   if (data.success) {
                       location.reload();
                   } else {
@@ -103,16 +107,18 @@
         }
 
         function removeCartItem(id) {
+            console.log('fired')
             if (confirm('Are you sure you want to remove this item?')) {
                 let url = `/cart/remove/${id}`;
                 fetch(url, {
-                    method: 'POST',
+                    method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     }
                 }).then(response => response.json())
                   .then(data => {
+                    // console.log(data);
                       if (data.success) {
                           location.reload();
                       } else {
