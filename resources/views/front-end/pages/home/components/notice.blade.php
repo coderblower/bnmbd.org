@@ -16,6 +16,7 @@
             <div class="row grid row-gap-3 ">
 
                 @foreach ($notice as $key => $item)
+                    @if ($key<2)
                     <div class="col-md-6 mx-auto my-2">
                         <div class="notice-card" style="">
                             <div class="description" style="">
@@ -34,6 +35,8 @@
                             </div>
                         </div>
                     </div>
+                    @endif
+
                 @endforeach
             </div>
             <div class="text-end mx-auto mt-4 wow fadeIn" data-wow-delay=".3s">
