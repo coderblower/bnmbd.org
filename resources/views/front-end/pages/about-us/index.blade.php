@@ -142,7 +142,7 @@
                 @foreach ($about_items as $key => $item)
                     <div class="col-lg-10 col-xl-10 mb-4 wow fadeIn" data-wow-delay=".3s">
                         <div class="card">
-                            <img src="{{ asset($item->image) }}" class="card-img-top" alt="image">
+                            {{-- <img src="{{ asset($item->image) }}" class="card-img-top" alt="image"> --}}
                             <div class="card-body">
                                 <h2 class="card-title">{{ $key + 1 }}.
                                     {{ app()->getLocale() == 'bn' ? $item->name_bn : $item->name_en }}
