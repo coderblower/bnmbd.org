@@ -24,23 +24,20 @@ class CartController extends Controller
 
     public function update($id, $quantity)
     {
-        dd($quantity);
+
+
+
+        $check=[];
         $cart = Session::get('cart', []);
 
-        if (isset($cart[$id])) {
-            if(str_contains($quantity, 'de')){
-                dd($quantity);
-                $cart[$id]['quantity'] -= 1;
-            } else {   $cart[$id]['quantity'] += 1; dd($quantity);
-            }
-            Session::put('cart', $cart);
-        }
 
         $cart_total = array_reduce($cart, function ($carry, $item) {
-            return $carry + ($item['price'] * $item['quantity']);
+            $check = [$item['price'], $item['quantity']];
+            return $carry + 0;
         }, 0);
 
-        return response()->json(['success' => true, 'cart_total' => $cart_total]);
+
+        return response()->json(['success' => true, 's'=>$check]);
 
     }
 
