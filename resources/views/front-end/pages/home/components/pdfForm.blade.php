@@ -1,6 +1,8 @@
 <div class="container-fluid bg-secondary py-5" id="stats-section"
     style="
-background-image: url('{{ asset('frontend/img/counter-bg1.png') }}');
+background-image: url('@php
+    echo "//res.cloudinary.com/saiful/image/upload/q_33,h_500/v1/bnm_project/wigccbuubv7jxnfovaom.jpg";
+@endphp');
 background-size: cover;
 background-attachment: fixed;
 ">
