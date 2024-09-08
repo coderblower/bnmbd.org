@@ -81,7 +81,8 @@
         <nav class="navbar navbar-light navbar-expand-lg" style="padding: 10px 0; ">
             <a href="{{ route('frontend.index') }}" class="navbar-brand">
                 <img src="https://res.cloudinary.com/saiful/image/upload/e_improve:outdoor:60,w_200,h_200,f_auto,q_50/v1/bnm_project/esbgpolwywmji4wfwel5.png" class="img-fluid" alt="First slide"
-                    style="height: auto; width: 40px; transform:scale(2.5, 2.5) translate(10px, 10px)" />
+                    style="height: auto; width: 40px;     transform: scale(2.5, 2.5) translate(23px, -11px);
+                    " />
             </a>
             <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
@@ -126,7 +127,7 @@
                             <a href="#"
                                 class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('প্রতিবেদন') : __('Report') }}</a>
                             {{-- <a href="{{ route('partyMembers') }}" class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('দলীয় সদস্য') : __('Party Members') }}</a> --}}
-                            <a href="#"
+                            <a href="{{route('notice-page')}}"
                                 class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('নোটিশ') : __('Notice') }}</a>
                             <a href="#"
                                 class="dropdown-item">{{ app()->getLocale() == 'bn' ? __('প্রকাশনা') : __('Publication') }}</a>
@@ -152,6 +153,7 @@
                             margin-top: -1px;
                             position: absolute;
                             background: #ffffff;
+
                             border-color: #e82629;
                             border-radius: 5px;
 

@@ -184,31 +184,10 @@ class HomeController extends Controller
         return view('front-end.pages.video.index',compact('siteSetting','video'));
     }
 
-    public function Notice()
-    {
-        $siteSetting = Cache::remember('siteSetting', 60, function () {
-            return SiteSetting::first();
-        });
-        $notice = Notice::orderBy('id', 'DESC')->paginate(21);
-        return view('front-end.pages.notice.index',compact('siteSetting','notice'));
-    }
 
 
-    public function NoticeDetails(Notice $notice)
-    {
-        $siteSetting = Cache::remember('siteSetting', 60, function () {
-            return SiteSetting::first();
-        });
 
-        $cacheKey = 'notice_latest' . $notice->id;
 
-        $notice_latest = Cache::remember($cacheKey, 60, function () use ($notice) {
-            return Notice::where('id', '!=', $notice->id)
-                    ->orderBy('id', 'DESC')
-                    ->limit(6)->get();
-        });
-        return view('front-end.pages.notice.noticeDetails', compact('siteSetting', 'notice','notice_latest'));
-    }
 
 
     public function videoDetails(Video $video)
