@@ -140,15 +140,15 @@
         <div class="container">
             <div class="row g-5 mt-3">
                 @foreach ($about_items as $key => $item)
-                    <div class="col-lg-10 col-xl-10 mb-4 wow fadeIn" data-wow-delay=".3s">
-                        <div class="card">
+                    <div class="col-lg-10 col-xl-10 mb-4 wow fadeIn mx-auto" data-wow-delay=".3s">
+                        <div class="card ">
                             {{-- <img src="{{ asset($item->image) }}" class="card-img-top" alt="image"> --}}
                             <div class="card-body">
-                                <h2 class="card-title">{{ $key + 1 }}.
+                                <h2 class="card-title text-center">{{ $key + 1 }}.
                                     {{ app()->getLocale() == 'bn' ? $item->name_bn : $item->name_en }}
                                 </h2>
 
-                                <p class="card-text">{!! app()->getLocale() == 'bn' ? $item->description_bn : $item->description_en !!}</p>
+                               <center> <p class="card-text" style="text-align: center">{!! app()->getLocale() == 'bn' ? $item->description_bn : $item->description_en !!}</p></center>
 
                             </div>
                         </div>
@@ -200,7 +200,7 @@
                 flex-grow: 1;
                 overflow-y: auto;
                 /* Makes the text scrollable if it overflows */
-                max-height: 10rem;
+                /* max-height: 10rem; */
                 /* Limits the height of the text area */
             }
 
