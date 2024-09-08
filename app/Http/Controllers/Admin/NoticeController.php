@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
-
+use App\Models\SiteSetting;
 use App\Models\Notice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 use DataTables;
+use Illuminate\Support\Facades\Cache;
 
 class NoticeController extends Controller
 {
@@ -70,7 +71,10 @@ class NoticeController extends Controller
      }
  }
 
- 
+
+
+
+
  /**
   * Show the form for creating a new resource.
   */
@@ -135,7 +139,7 @@ class NoticeController extends Controller
      }
  }
 
- 
+
 
  // Update the specified resource in storage
  public function update(Request $request, Notice $notice)
@@ -197,8 +201,8 @@ class NoticeController extends Controller
      }
  }
 
- // notice_status_change 
- 
+ // notice_status_change
+
  public function notice_status_change(Request $request)
  {
      $request->validate([
@@ -219,4 +223,31 @@ class NoticeController extends Controller
      $image->move($destinationPath, $imageName);
      return 'uploads-image/notice/' . $imageName;
  }
+
+
+    public function ShowNotice()
+    {
+        $siteSetting = Cache::remember('siteSetting', 60, function () {
+            return SiteSetting::first();
+        });
+        $notice = Notice::orderBy('id', 'DESC')->paginate(10);
+        return view('front-end.pages.notice.index',compact('siteSetting','notice'));
+    }
+
+    public function NoticeDetails(Notice $notice)
+    {
+        $siteSetting = Cache::remember('siteSetting', 60, function () {
+            return SiteSetting::first();
+        });
+
+        $cacheKey = 'notice_latest' . $notice->id;
+
+        $notice_latest = Cache::remember($cacheKey, 60, function () use ($notice) {
+            return Notice::where('id', '!=', $notice->id)
+                    ->orderBy('id', 'DESC')
+                    ->limit(6)->get();
+        });
+        return view('front-end.pages.notice.noticeDetails', compact('siteSetting', 'notice','notice_latest'));
+    }
+
 }

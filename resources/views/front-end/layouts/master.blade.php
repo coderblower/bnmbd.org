@@ -74,7 +74,7 @@
         .news {
             width: 100%;
             background: #fff;
-            border-bottom: solid 2px #e82629;
+            box-shadow:0 2px 4px rgb(91 94 91 / 70%)
         }
 
         .news-title {

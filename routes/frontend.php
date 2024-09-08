@@ -6,6 +6,7 @@ use App\Http\Controllers\LangController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\BnmtvController;
 use App\Http\Controllers\CartController;
@@ -55,8 +56,8 @@ Route::post('/primary-member', [HomeController::class, 'create_primary_member'])
 Route::get('news-page', [HomeController::class, 'news'])->name('news-page');
 Route::get('/news-details/{news}', [HomeController::class, 'newsDetails'])->name('news.details');
 
-Route::get('notice-page', [HomeController::class, 'Notice'])->name('notice-page');
-Route::get('/notice-details/{notice}', [HomeController::class, 'noticeDetails'])->name('notice.details');
+Route::get('notice-page', [NoticeController::class, 'ShowNotice'])->name('notice-page');
+Route::get('/notice-details/{notice}', [NoticeController::class, 'noticeDetails'])->name('notice.details');
 
 Route::get('video-page', [HomeController::class, 'video'])->name('video-page');
 Route::get('video-details/{video}', [HomeController::class, 'videoDetails'])->name('video.details');

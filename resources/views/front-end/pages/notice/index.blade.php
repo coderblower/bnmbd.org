@@ -32,7 +32,7 @@
             </div>
             <div class="row justify-content-center">
                 @foreach ($notice as $key => $item)
-                    <div class="col-md-6">
+                    <div class="col-md-8 mx-auto">
                         <div class="blog-card">
                             <div class="meta">
                                 <div class="photo"
@@ -66,7 +66,8 @@
                     </div>
                 @endforeach
             </div>
-            <!-- Pagination Links -->
+
+            {{-- <!-- Pagination Links -->
             @if ($notice->total() > 20)
                 <div class="d-flex justify-content-center mt-4">
                     <nav aria-label="Page navigation example">
@@ -87,7 +88,7 @@
                         </ul>
                     </nav>
                 </div>
-            @endif
+            @endif --}}
 
         </div>
     </div>
@@ -97,6 +98,9 @@
 
 
     <!-- Blog End -->
+ <div class="col-2 mx-auto">
+    {!! $notice->links() !!}
+</div>
 
 
 @endsection
