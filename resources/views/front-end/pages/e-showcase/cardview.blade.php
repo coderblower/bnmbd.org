@@ -99,7 +99,7 @@
 
                     console.log(data)
                   if (data.success) {
-                    //   location.reload();
+                      location.reload();
                   } else {
                       alert('Failed to update quantity.');
                   }

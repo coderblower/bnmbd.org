@@ -28,19 +28,23 @@ class CartController extends Controller
 
 
 
-        $check=[];
+        $check='';
         $cart = Session::get('cart');
 
+        if (isset($cart[$id])) {
+            if(str_contains($quantity, 'de')){
+                $cart[$id]['quantity']--;
 
-
-        if(str_contains($quantity, 'de')){
-            $cart['id']['quantity']++;
-        } else {
-            $cart['id']['quantity']--;
+            } else {
+                $cart[$id]['quantity']++;
+            }
+            Session::put('cart', $cart);
         }
 
 
-        return response()->json(['success' => true, 'cart'=>$cart]);
+
+
+        return response()->json(['success' => true, 'cart'=>$cart, ]);
 
     }
 
