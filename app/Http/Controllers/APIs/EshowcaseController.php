@@ -15,6 +15,8 @@ class EshowcaseController extends Controller
     {
         try {
             $data = Eshowcase::orderBy('id', 'DESC')->paginate(21);
+
+
             return response()->json([
                 'success' => true,
                 'data' => $data,
