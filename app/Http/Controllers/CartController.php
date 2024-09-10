@@ -27,17 +27,20 @@ class CartController extends Controller
 
 
 
+
         $check=[];
-        $cart = Session::get('cart', []);
+        $cart = Session::get('cart');
 
 
-        $cart_total = array_reduce($cart, function ($carry, $item) {
-            $check = [$item['price'], $item['quantity']];
-            return $carry + 0;
-        }, 0);
+
+        if(str_contains($quantity, 'de')){
+            $cart['id']['quantity']++;
+        } else {
+            $cart['id']['quantity']--;
+        }
 
 
-        return response()->json(['success' => true, 's'=>$check]);
+        return response()->json(['success' => true, 'cart'=>$cart]);
 
     }
 
