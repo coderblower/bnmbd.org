@@ -251,12 +251,15 @@ class HomeController extends Controller
 
 
 
-    public function e_showcase()
+    public function e_showcase(Request $request)
     {
         try {
             $siteSetting = Cache::remember('siteSetting', 60, function () {
                 return SiteSetting::first();
             });
+
+            $search = $request->get('search');
+            $max = $request->get('price_end');
 
             $eshowcase = DB::table('eshowcases')
                 ->select(
@@ -311,8 +314,24 @@ class HomeController extends Controller
                     'profiles.ward',
                     'profiles.requestId',
                     'profiles.created_at as profile_created_at',
-                    'profiles.updated_at as profile_updated_at'
-                )
+                    'profiles.updated_at as profile_updated_at' )
+                ->where(function($query) use ($max,$request){
+                    if($max>0){
+                        $query->whereBetween('price', [$request->get('price_start'), $max]);
+                    }
+                    return $query;
+                })
+
+                ->where(function($query) use ($search){
+                    if(strlen($search)>0){
+                        $query->orwhere('eshowcases.name_bn' , 'LIKE', '%'.$search.'%')
+                                ->orwhere('eshowcases.name_en' , 'LIKE', '%'.$search.'%')
+                                ->orwhere('eshowcases.description_en' , 'LIKE', '%'.$search.'%')
+                                ->orwhere('eshowcases.description_bn' , 'LIKE', '%'.$search.'%');
+                    }
+
+                    return $query;
+                })
                 ->join('users', 'eshowcases.owner_user_id', '=', 'users.id')
                 ->join('profiles', 'users.member_id', '=', 'profiles.member_id')
                 ->leftJoin('committees', 'users.committee_id', '=', 'committees.id')
@@ -320,10 +339,11 @@ class HomeController extends Controller
                 ->orderBy('eshowcases.id', 'DESC')
                 ->paginate(20);
 
+
                 $cart = Session::get('cart', []);
 
                 $counts = 0;
-        //
+
                 foreach($cart as $key => $value){
                     $counts += $value['quantity'];
                 };

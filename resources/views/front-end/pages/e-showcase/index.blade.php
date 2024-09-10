@@ -1,6 +1,30 @@
 @extends('front-end.layouts.master')
 @section('title', 'All Eshowcase')
 @section('content')
+
+<script>
+    function toggleCustomPriceInput() {
+            var priceSelect = document.getElementById('price-range-select').value;
+            priceSelect = priceSelect.split('-');
+            let input1 = document.querySelector('#price_start')
+
+            let input2 = document.querySelector('#price_end');
+
+            input1.value = priceSelect[0];
+            input2.value = priceSelect[1];
+
+            const customPriceInputs = document.getElementById('custom-price-inputs');
+            console.log(priceSelect, input1, input2);
+
+            // if (priceSelect === 'custom') {
+            //     customPriceInputs.style.display = 'block';
+            // } else {
+            //     customPriceInputs.style.display = 'none';
+            // }
+        }
+
+</script>
+
 </br></br></br>
     <!-- Page Header Start -->
     <div class="container-fluid bg-primary text-white py-4">
@@ -31,25 +55,29 @@
                         <h5 class="font-weight-bold">{{ app()->getLocale() == 'bn' ? 'মূল্য ফিল্টার' : 'Price Filter' }}</h5>
                         <form action="" method="GET">
                             <!-- Predefined Price Ranges Dropdown -->
-                            <select id="price-range-select" class="form-control mb-3" onchange="toggleCustomPriceInput()">
+                            <select id="price-range-select" class="form-control mb-3" onchange="toggleCustomPriceInput(this)">
                                 <option value="all">{{ app()->getLocale() == 'bn' ? 'সব মূল্য' : 'All Prices' }}</option>
-                                <option value="0-1000">৳0 - ৳1,000</option>
-                                <option value="1001-3000">৳1,001 - ৳3,000</option>
-                                <option value="3001-5000">৳3,001 - ৳5,000</option>
+                                <option value="0-100">৳0 - ৳1,00</option>
+                                <option value="100-500">৳100 - ৳500</option>
+                                <option value="500-1000">৳500 - ৳1000</option>
+                                <option value="1001-2000">৳1000 - ৳2000</option>
                                 <option value="custom">{{ app()->getLocale() == 'bn' ? 'কাস্টম পরিসীমা' : 'Custom Range' }}</option>
                             </select>
 
+                            <input type="hidden" name="price_start" id="price_start" name="price_start" value="0">
+                            <input type="hidden" name="price_end" id="price_end" type="number" value="0" >
+
                             <!-- Custom Price Input Fields -->
-                            <div id="custom-price-inputs" style="display: none;">
+                            {{-- <div id="custom-price-inputs" style="display: none;">
                                 <div class="form-group">
                                     <label for="price-start" class="font-weight-bold">{{ app()->getLocale() == 'bn' ? 'শুরু মূল্য' : 'Start Price' }}:</label>
-                                    <input type="number" id="price-start" name="price_start" class="form-control" placeholder="৳0">
+                                    <input type="number" id="price-cus-start" name="price_start" class="form-control" placeholder="৳0">
                                 </div>
                                 <div class="form-group">
                                     <label for="price-end" class="font-weight-bold">{{ app()->getLocale() == 'bn' ? 'শেষ মূল্য' : 'End Price' }}:</label>
-                                    <input type="number" id="price-end" name="price_end" class="form-control" placeholder="৳5,000">
+                                    <input type="number" id="price-cus-end" name="price_end" class="form-control" placeholder="৳5,000">
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <button type="submit" class="btn btn-primary btn-block">{{ app()->getLocale() == 'bn' ? 'ফিল্টার' : 'Filter' }}</button>
                         </form>
@@ -334,16 +362,6 @@
             });
         }
 
-        function toggleCustomPriceInput() {
-            const priceSelect = document.getElementById('price-range-select').value;
-            const customPriceInputs = document.getElementById('custom-price-inputs');
-
-            if (priceSelect === 'custom') {
-                customPriceInputs.style.display = 'block';
-            } else {
-                customPriceInputs.style.display = 'none';
-            }
-        }
 
         $(document).ready(function() {
             $("#eshowcase").addClass('active');
