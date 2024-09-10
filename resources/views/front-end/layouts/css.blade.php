@@ -22,6 +22,10 @@
 <!-- Toastr -->
 <link rel="stylesheet" href="{{ asset('backend/plugins/toastr/toastr.min.css') }}">
 <style>
+    html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
    /* .team-carousel > .owl-item { width:80px !important  } */
     .switch {
         position: relative;

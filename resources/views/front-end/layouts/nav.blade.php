@@ -74,6 +74,106 @@
                 </div>
 
             </div>
+
+
+            <script>
+                function some(gg){
+                   let crossIcon =  gg.querySelector('.cross-icon');
+                   let mainIcon = gg.querySelector('.main-icon');
+
+                   if($(crossIcon).hasClass('d-none')){
+                    $(crossIcon).removeClass('d-none');
+                    $(mainIcon).addClass('d-none');
+                   } else {
+                    $(crossIcon).addClass('d-none');
+                    $(mainIcon).removeClass('d-none');
+                   }
+
+                }
+            </script>
+
+            <div class="row" style="position: relative;">
+                <!-- Example single danger button -->
+                <div class="offset-5 col" style="">
+                    <div class="btn-group" style="position:absolute">
+                        <div type="button" class="common-mob" onclick="some(this)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
+                                <a href="" class="position-relative " style="">
+
+                                    <div class="" >
+                                        <i class="fa-solid fa-globe main-icon" style="color: #fff; font-size:30px"></i>
+                                        <i class="fa-solid fa-x d-none cross-icon"  style="color:white;"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="dropdown-menu">
+                            <div class="switch">
+                                <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox"
+                                    {{ session()->get('locale') == 'en' ? 'checked' : '' }}>
+                                <label for="language-toggle"></label>
+                                <span class="off">EN</span>
+                                <span class="on">{{ app()->getLocale() == 'bn' ? 'বাং' : 'BN' }}</span>
+                            </div>
+                        </div>
+                      </div>
+                    <div class="btn-group" style="">
+                        <div type="button" class=" " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
+                                <a href="" class="position-relative animated tada infinite" style="font-size: 13px">
+                                    <i class="fa fa-phone-alt fa-2x" style="color: #2a362c"></i>
+                                    <div class="position-absolute" style="top: -7px; left: 20px">
+                                        <span><i class="fa fa-comment-dots"
+                                                style="    color: #ffffff; transform: scale(-1.2) translate(18px, 1px) rotate(45deg);"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="dropdown-menu">
+                            <div class="switch">
+                                <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox"
+                                    {{ session()->get('locale') == 'en' ? 'checked' : '' }}>
+                                <label for="language-toggle"></label>
+                                <span class="off">EN</span>
+                                <span class="on">{{ app()->getLocale() == 'bn' ? 'বাং' : 'BN' }}</span>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="btn-group" style="">
+                        <div type="button" class=" " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <img src="https://maxst.icons8.com/vue-static/icon/popular-request/request-social-media.png" width="100px" alt="">
+                        </div>
+                        <div class="dropdown-menu">
+                            <span>কোনো প্রশ্ন আছে কি? কল করুন: +88 01716010102 +8801871006627</span>
+                        </div>
+                      </div>
+                      <div class="btn-group" style="">
+                        <div type="button" class=" " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <img src="https://maxst.icons8.com/vue-static/icon/popular-request/request-social-media.png" width="100px" alt="">
+                        </div>
+                        <div class="dropdown-menu">
+                            <div class="d-flex hightech-link">
+                                @if ($siteSetting)
+                                    <a href="{{  "https://www.facebook.com/jagojanataparty" }}" style="background-color: #0688FF" target="blank"
+                                        class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
+                                            class="fab fa-facebook-f " style="color:#fff"></i></a>
+                                    <a href="{{ $siteSetting->twitter_url }}" target="blank"
+                                        class="btn-light nav-fill btn btn-square rounded-circle me-2" style="background-color:#000"><i class="fa-brands fa-x-twitter" style="color:#fff"></i></a>
+                                    <a href="{{ $siteSetting->instagram_url }}" target="blank"
+                                        class="btn-light nav-fill btn btn-square rounded-circle me-2" style="background-color:#B81078"><i
+                                            class="fab fa-instagram " style="color:#fff"></i></a>
+                                    <a href="{{ $siteSetting->linkedin_url }}" target="blank"
+                                        class="btn-light nav-fill btn btn-square rounded-circle me-0"><i
+                                            class="fab fa-linkedin-in text-primary"></i></a>
+                                @else
+                                    <p>No data available.</p>
+                                @endif
+
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
         </div>
     </div>
 
